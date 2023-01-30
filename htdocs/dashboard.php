@@ -1,5 +1,19 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
+<?php
+
+$username = $_POST["username"];
+$password = $_POST["password"];
+
+if ($username == "admin" && $password == "password") {
+    header("Location: admin.php");
+} else {
+    echo "Invalid username or password";
+}
+
+?>
 
 <head>
     <meta charset="UTF-8" />
@@ -8,6 +22,8 @@
     <!-- Font Awesome Cdn Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 </head>
+
+
 
 <body>
     <div class="container">

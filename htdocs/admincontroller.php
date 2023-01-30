@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<?php
+
+require 'admin.php';
+
+?>
+
 <html lang="en">
 
 <head>
@@ -13,12 +19,12 @@
 
     <div class="log-form">
         <h2>The Project - Login Page</h2>
-        <form>
+        <form action="dashboard.php" method="post">
             <div class="input">
-                <input type="text" title="username" placeholder="enter username" />
+                <input type="text" title="username" name="username" placeholder="enter username" />
                 <br />
                 <br />
-                <input type="password" title="username" placeholder="enter password" />
+                <input type="password" title="username" name="password" placeholder="enter password" />
                 <br />
                 <br />
                 <button type="submit" class="btn">Login</button>
