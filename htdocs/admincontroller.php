@@ -18,8 +18,9 @@ require 'admin.php';
 <body>
 
     <div class="log-form">
-        <h2>The Project - Login Page</h2>
+        <h2>COMP3512(Web II) - The Project[Login page]</h2>
         <form action="dashboard.php" method="post">
+
             <div class="input">
                 <input type="text" title="username" name="username" placeholder="enter username" />
                 <br />
@@ -32,6 +33,8 @@ require 'admin.php';
                 <br />
                 <a class="forgot" href="#">Forgot Username?</a>
             </div>
+
+
         </form>
     </div>
 </body>

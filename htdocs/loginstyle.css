@@ -17,7 +17,7 @@ button:hover {
 
 button:active {
 
-    background-color: rgba(243, 161, 8, 0.552);
+    background-color: rgba(252, 109, 0, 0.986);
     color: rgba(14, 11, 11, 0.885);
 
 }
@@ -34,6 +34,47 @@ h2 {
 }
 
 body {
+    background: #000
+}
 
-    background-color: rgb(210, 179, 179);
+.card {
+    border: none;
+    height: 320px
+}
+
+.forms-inputs {
+    position: relative
+}
+
+.forms-inputs span {
+    position: absolute;
+    top: -18px;
+    left: 10px;
+    background-color: #fff;
+    padding: 5px 10px;
+    font-size: 15px
+}
+
+.forms-inputs input {
+    height: 50px;
+    border: 2px solid #eee
+}
+
+.forms-inputs input:focus {
+    box-shadow: none;
+    outline: none;
+    border: 2px solid #000
+}
+
+.btn {
+    height: 50px
+}
+
+.success-data {
+    display: flex;
+    flex-direction: column
+}
+
+.bxs-badge-check {
+    font-size: 90px
 }
