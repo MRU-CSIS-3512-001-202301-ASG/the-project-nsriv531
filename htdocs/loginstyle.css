@@ -34,7 +34,7 @@ h2 {
 }
 
 body {
-    background: #000
+    background: #c82424
 }
 
 .card {
@@ -63,7 +63,7 @@ body {
 .forms-inputs input:focus {
     box-shadow: none;
     outline: none;
-    border: 2px solid #000
+    border: 2px solid #b82525
 }
 
 .btn {
