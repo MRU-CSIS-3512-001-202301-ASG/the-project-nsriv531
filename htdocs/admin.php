@@ -1,6 +1,18 @@
+<?php
+
+session_start();
+
+require 'admincontroller.php';
+
+
+
+?>
+
 <!DOCTYPE html>
 
 <html lang="en">
+
+
 
 <head>
     <meta charset="UTF-8" />
@@ -9,18 +21,12 @@
     <!-- Font Awesome Cdn Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 </head>
-<?php
-
-require 'admincontroller.php';
-
-?>
-
 
 <body>
 
     <div class="log-form">
         <h2>COMP3512(Web II) - The Project[Login page]</h2>
-        <form action="dashboard.php" method="post">
+        <form action="admin.php" method="post">
 
             <div class="input">
                 <input type="text" title="username" name="username" placeholder="enter username" />

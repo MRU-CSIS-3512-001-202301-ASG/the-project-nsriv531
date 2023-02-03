@@ -1,14 +1,13 @@
 <?php
 
-session_start();
+if (isset($_POST["username"]) && isset($_POST["password"])) {
 
-$username = $_POST["username"];
-$password = $_POST["password"];
+    $username = $_POST["username"];
+    $password = $_POST["password"];
 
-if ($username == "admin" && $password == "password") {
-    header("Location: dashboard.php");
-} else {
-    echo "Invalid username or password";
-    header("Location: admin.php");
-
+    if ($username == "admin" && $password == "password") {
+        header("Location: dashboard.php");
+    } else {
+        echo "Invalid username or password";
+    }
 }
