@@ -18,9 +18,8 @@ if ($_SERVER['REQUEST_METHOD'] === "GET") {
 
             $_SESSION["loginkey"] = true;
 
-            header("Location: dashboard.php");
+            header("Location: browsefilter.php");
         } else {
-
 
             $passwordforgot = "Invalid username or password";
 
