@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>The Project - Dashboard Info</title>
+    <title>Browse Filter Page - Dashboard</title>
     <link rel="stylesheet" href="style.css" />
     <!-- Font Awesome Cdn Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
@@ -49,7 +49,7 @@
 
         <section class="main">
             <div class="main-top">
-                <h1>The Project - Dashboard</h1>
+                <h1>Browse Filter Page - Dashboard</h1>
                 <i class="fas fa-user-cog"></i>
             </div>
             <div class="users">
