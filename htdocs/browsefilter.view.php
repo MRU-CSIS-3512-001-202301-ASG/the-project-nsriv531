@@ -5,13 +5,11 @@
 <head>
     <meta charset="UTF-8" />
     <title>Browse Filter Page - Dashboard</title>
-    <link rel="stylesheet" href="newbrowserfilterstyle.css" />
+    <link rel="stylesheet" href="browserfilterstyle.css" />
     <!-- Font Awesome Cdn Link -->
 </head>
 
 <body>
-
-
     <button type="submit">Logout</button>
 
     <?php

@@ -12,7 +12,7 @@ function image_grabber($db_helper)
     INNER JOIN cities ON imagedetails.CityCode = cities.CityCode 
     INNER JOIN countries ON cities.CountryCodeISO = countries.ISO 
     WHERE imagerating.UserID = 23 
-    ORDER BY rating DESC, ImageID ASC
+    ORDER BY ImageID ASC
 
     QUERY;
 
