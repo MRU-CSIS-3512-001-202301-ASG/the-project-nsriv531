@@ -15,8 +15,5 @@ function image_grabber($db_helper) {
 
     QUERY;
 
-    return $db_helper->run($query)->fetchAll(PDO::FETCH_COLUMN);
+    return $db_helper->run($query)->fetchAll();
 }
-
-
-?>

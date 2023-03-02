@@ -1,0 +1,23 @@
+table {
+    border: 10px solid orange;
+    margin: 25px 0;
+    font-size: 40px;
+    min-width: 100%;
+    overflow: hidden;
+    border-radius: 5px 5px 0 0;
+
+}
+
+td {
+    margin: 0px;
+    padding: 5px;
+    text-align: right;
+    border: 10px solid #080808;
+}
+
+tr {
+    margin: 0px;
+    padding: 5px;
+    text-align: right;
+    border: 20px solid #2ba2a8;
+}

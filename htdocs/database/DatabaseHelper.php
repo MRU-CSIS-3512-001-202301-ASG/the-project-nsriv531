@@ -11,7 +11,7 @@ class DatabaseHelper
         $port = $config['port'] ?? '3306';
         $dbname = $config['dbname'];
         $charset = $config['charset'] ?? 'utf8mb4';
-        $username = $config['username']
+        $username = $config['username'];
         $password = $config['password'];
 
         $dsn = "mysql:host=$host;port=$port;dbname=$dbname;charset=$charset";
