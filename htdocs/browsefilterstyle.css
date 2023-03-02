@@ -1,7 +1,7 @@
 table {
-    border: 10px solid orange;
+    border: 10px solid rgb(145, 107, 20);
     margin: 25px 0;
-    font-size: 40px;
+    font-size: 20px;
     min-width: 100%;
     overflow: hidden;
     border-radius: 5px 5px 0 0;
@@ -11,13 +11,20 @@ table {
 td {
     margin: 0px;
     padding: 5px;
-    text-align: right;
+    text-align: center;
     border: 10px solid #080808;
 }
 
 tr {
     margin: 0px;
     padding: 5px;
-    text-align: right;
+    text-align: center;
     border: 20px solid #2ba2a8;
+}
+
+img {
+
+    width: 150px;
+    height: 150px;
+
 }

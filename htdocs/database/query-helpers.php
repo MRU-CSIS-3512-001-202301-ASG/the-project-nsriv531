@@ -1,7 +1,8 @@
 <?php
 
 
-function image_grabber($db_helper) {
+function image_grabber($db_helper)
+{
 
     $query = <<<QUERY
 
@@ -16,4 +17,11 @@ function image_grabber($db_helper) {
     QUERY;
 
     return $db_helper->run($query)->fetchAll();
+}
+
+
+function image_helper($imagepath)
+{
+
+    return "https://res.cloudinary.com/dlf6zmtga/image/upload/v1673638741/$imagepath";
 }
