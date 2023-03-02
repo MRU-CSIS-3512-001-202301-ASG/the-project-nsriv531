@@ -24,17 +24,26 @@
 
     $queryResult = image_grabber($db_helper, $orderbyfilter);
 
+    echo "<form method='post'>";
     echo "<table>";
     echo "<tr>
-    <td><button type='submit'>Image ID</button></td>
-    <td><button type='submit'>JPEG</button></td>
-    <td><button type='submit'>City Name</button></td>
-    <td><button type='submit'>Country</button></td>
-    <td><button type='submit'>Latitude</button></td>
-    <td><button type='submit'>Longitude</button></td>
-    <td><button type='submit'>Rating</button></td>
+    <td><input type='text' id='fname' name='fname' placeholder='image id search'></td>
+    <td><input type='text' id='fname' name='fname' placeholder='JPEG Search'></td>
+    <td><input type='text' id='fname' name='fname' placeholder='City Name Search'></td>
+    <td><input type='text' id='fname' name='fname' placeholder='Country search'></td>
+    <td><input type='text' id='fname' name='fname' placeholder='Latitude search'></td>
+    <td><input type='text' id='fname' name='fname' placeholder='Longitude search'></td>
+    <td><input type='text' id='fname' name='fname' placeholder='Rating search'></td>";
+    echo "</tr>";
+    echo "<tr>
+    <td><button type='submit' class='btn'>Image ID</button></td>
+    <td><button type='submit'class='btn'>JPEG</button></td>
+    <td><button type='submit'class='btn'>City Name</button></td>
+    <td><button type='submit'class='btn'>Country</button></td>
+    <td><button type='submit'class='btn'>Latitude</button></td>
+    <td><button type='submit'class='btn'>Longitude</button></td>
+    <td><button type='submit'class='btn'>Rating</button></td>
     </tr>";
-
     foreach ($queryResult as $value) {
 
         echo "<tr><td>" . $value["ImageID"] . " </td>" .
@@ -46,7 +55,9 @@
             "<td>" . $value["rating"] . "</td></tr>";
     }
     echo "</table>";
-
+    echo "<tr><button type='submit' class='btnsearch'>Reset</button></tr>";
+    echo "<tr><button type='submit' class='btnsearch'>Search</button></tr>";
+    echo "</form>";
 
     ?>
 

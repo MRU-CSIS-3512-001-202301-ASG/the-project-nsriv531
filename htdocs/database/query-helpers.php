@@ -1,7 +1,7 @@
 <?php
 
 
-function image_grabber($db_helper)
+function image_grabber($db_helper, $queryResult)
 {
 
     $query = <<<QUERY

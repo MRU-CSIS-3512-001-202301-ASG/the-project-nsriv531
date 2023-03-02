@@ -24,6 +24,46 @@ button:active {
 
 }
 
+.btnsearch {
+
+    background-color: #6a552f;
+    color: rgb(47, 9, 9);
+    padding: 14px 20px;
+    border: 2px solid #4CAF50;
+    margin: 8px 0;
+    cursor: pointer;
+    height: 45px;
+    width: 20%;
+
+}
+
+.btn {
+
+    background-color: #6a552f;
+    color: rgb(47, 9, 9);
+    padding: 14px 20px;
+    border: 2px solid #4CAF50;
+    margin: 8px 0;
+    cursor: pointer;
+    height: 45px;
+    width: 80%;
+
+}
+
+.btn:hover {
+
+    background-color: rgb(227, 227, 63);
+    color: white;
+
+}
+
+.btn:active {
+
+    background-color: rgba(252, 109, 0, 0.986);
+    color: rgba(14, 11, 11, 0.885);
+
+}
+
 table {
     border: 20px solid rgb(145, 107, 20);
     margin: 25px 0;
