@@ -2,11 +2,12 @@ button {
     background-color: #ffa705;
     color: white;
     padding: 14px 20px;
+    border: 2px solid #4CAF50;
     margin: 8px 0;
-    border: none;
     cursor: pointer;
     height: 50px;
     width: 5%;
+    float: right;
 }
 
 button:hover {
@@ -16,15 +17,12 @@ button:hover {
 
 }
 
-
 button:active {
 
     background-color: rgba(252, 109, 0, 0.986);
     color: rgba(14, 11, 11, 0.885);
 
 }
-
-
 
 table {
     border: 20px solid rgb(145, 107, 20);
