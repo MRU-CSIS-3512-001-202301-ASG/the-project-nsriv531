@@ -22,17 +22,17 @@
 
     require 'database/query-helpers.php';
 
-    $queryResult = image_grabber($db_helper);
+    $queryResult = image_grabber($db_helper, $orderbyfilter);
 
     echo "<table>";
     echo "<tr>
-    <td>Image ID</td>
-    <td>JPEG</td>
-    <td>City Name</td>
-    <td>Country</td>
-    <td>Latitude</td>
-    <td>Longitude</td>
-    <td>Rating</td>
+    <td><button type='submit'>Image ID</button></td>
+    <td><button type='submit'>JPEG</button></td>
+    <td><button type='submit'>City Name</button></td>
+    <td><button type='submit'>Country</button></td>
+    <td><button type='submit'>Latitude</button></td>
+    <td><button type='submit'>Longitude</button></td>
+    <td><button type='submit'>Rating</button></td>
     </tr>";
 
     foreach ($queryResult as $value) {
