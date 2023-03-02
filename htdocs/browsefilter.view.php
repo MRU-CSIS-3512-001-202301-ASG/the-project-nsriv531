@@ -5,14 +5,16 @@
 <head>
     <meta charset="UTF-8" />
     <title>Browse Filter Page - Dashboard</title>
-    <link rel="stylesheet" href="browsefilterstyle.css" />
+    <link rel="stylesheet" href="newbrowserfilterstyle.css" />
     <!-- Font Awesome Cdn Link -->
 </head>
 
 <body>
 
-    <?php
 
+    <button type="submit">Logout</button>
+
+    <?php
 
     require 'database/DatabaseHelper.php';
 
@@ -29,11 +31,12 @@
     <td>Image ID</td>
     <td>JPEG</td>
     <td>City Name</td>
-    <td>Country/td>
+    <td>Country</td>
     <td>Latitude</td>
     <td>Longitude</td>
     <td>Rating</td>
     </tr>";
+
     foreach ($queryResult as $value) {
 
         echo "<tr><td>" . $value["ImageID"] . " </td>" .
