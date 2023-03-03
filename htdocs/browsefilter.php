@@ -10,6 +10,9 @@ if (!isset($_SESSION["loginkey"])) {
 
     $orderby = "default";
     $orderASCDESC = "default";
+    $andWHERE = "default";
+    $andCondition = "default";
+
 
     if (!isset($_COOKIE["citycookie"]) && isset($_GET["citybutton"])) {
         unset($_COOKIE['ratingcookie']);

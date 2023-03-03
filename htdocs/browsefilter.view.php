@@ -24,19 +24,34 @@
     require 'database/query-helpers.php';
 
 
-    $queryResult = image_grabber($db_helper, $orderby, $orderASCDESC);
+    $queryResult = image_grabber($db_helper, $orderby, $orderASCDESC, $andWHERE, $andCondition);
 
 
     echo "<form method='get'>";
+    echo "<table>
+    <tr>
+    <td>  <input type='radio' id='cityradiobutton' name='fav_language' value='City'></td>
+    <td> <input type='radio' id='countryradiobutton' name='fav_language' value='Country'></td>
+    <td> <input type='radio' id='ratingradiobutton' name='fav_language' value='Rating'> </td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>";
+    echo "<td><button type='submit' class='btnsearch'>Search</button></td>";
+    echo "</tr>";
+    echo "</table>";
+    echo "</form>";
+
+    echo "<form method='get'>";
     echo "<table>";
-    echo "<tr>
-    <td>ImageID</td>
-    <td>ImagePath</td>
-    <td><input type='text' id='citynamesearch' name='city' placeholder='City Name Search'></td>
-    <td><input type='text' id='countrynamesearch' name='country' placeholder='Country search'></td>
-    <td>Latitude</td>
-    <td>Longitude</td>
-    <td><input type='text' id='ratingesearch' name='rating' placeholder='Rating search'></td>";
+    echo "<tr> 
+    <td>ImageID</td> 
+    <td>ImagePath</td> 
+    <td>City</td>
+    <td>Country</td> 
+    <td>Latitude</td> 
+    <td>Longitude</td> 
+    <td>Rating</td>";
     echo "</tr>";
     echo "<tr>
     <td></td>
@@ -44,8 +59,8 @@
     <td><button type='submit' class='btnsearch' name='citybutton'>ASC/DESC</button></td>
     <td></td>
     <td></td>
-    <td></td>
-    <td><button type='submit' class='btnsearch' name='ratingbutton'>ASC/DESC</button></td>";
+    <td><button type='submit' class='btnsearch' name='ratingbutton'>ASC/DESC</button></td>
+    <td></td>";
     echo "</tr>";
     foreach ($queryResult as $value) {
 
@@ -58,8 +73,6 @@
             "<td>" . $value["rating"] . "<input type='number' id='rateselector" . $value["ImageID"] . "' min='1' max='5'></input></td></tr>";
     }
     echo "</table>";
-    echo "<tr><button type='submit' class='btnsearch'>Reset</button></tr>";
-    echo "<tr><button type='submit' class='btnsearch'>Search</button></tr>";
     echo "</form>";
 
 

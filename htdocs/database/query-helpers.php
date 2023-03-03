@@ -1,14 +1,27 @@
 <?php
 
 
-function image_grabber($db_helper, $orderby, $orderASCDESC)
+function image_grabber($db_helper, $orderby, $orderASCDESC, $andWHERE, $andCondition)
 {
 
+
+    if ($andWHERE == "default") {
+
+        $orderwhereClause = "";
+    } else if ($andWHERE = "City") {
+
+        $orderwhereClause = "AND cities.Asciiname = '$andCondition'";
+    } else if ($andWHERE = "Country") {
+
+        $orderwhereClause = "AND countries.CountryName = '$andCondition'";
+    } else if ($andWHERE = "Rating") {
+
+        $orderwhereClause = "AND imagerating.Rating = $andCondition}";
+    }
 
     if ($orderby == "default") {
 
         $orderbyClause = "ImageID ASC";
-
     } else if ($orderby == "City") {
 
         if ($orderASCDESC == "ASC") {
@@ -16,13 +29,6 @@ function image_grabber($db_helper, $orderby, $orderASCDESC)
         } else if ($orderASCDESC == "DESC") {
 
             $orderbyClause = "cities.AsciiName DESC";
-        }
-    } else if ($orderby == "Country") {
-
-        if ($orderASCDESC == "ASC") {
-            $orderbyClause = "Country ASC";
-        } else {
-            $orderbyClause = "Country DESC";
         }
     } else if ($orderby == "Rating") {
 
@@ -40,7 +46,7 @@ function image_grabber($db_helper, $orderby, $orderASCDESC)
     INNER JOIN imagerating ON imagedetails.ImageID  = imagerating.ImageID  
     INNER JOIN cities ON imagedetails.CityCode = cities.CityCode 
     INNER JOIN countries ON cities.CountryCodeISO = countries.ISO 
-    WHERE imagerating.UserID = 23 
+    WHERE imagerating.UserID = 23 $orderwhereClause
     ORDER BY $orderbyClause 
 
     QUERY;
