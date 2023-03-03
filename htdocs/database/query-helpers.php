@@ -4,16 +4,14 @@
 function image_grabber($db_helper, $orderby, $orderASCDESC)
 {
 
-    echo $orderby;
-
 
     if ($orderby == "default") {
 
         $orderbyClause = "ImageID ASC";
+
     } else if ($orderby == "City") {
 
         if ($orderASCDESC == "ASC") {
-
             $orderbyClause = "cities.AsciiName ASC";
         } else if ($orderASCDESC == "DESC") {
 

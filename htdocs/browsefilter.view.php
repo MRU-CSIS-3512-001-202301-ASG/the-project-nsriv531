@@ -15,7 +15,6 @@
     <?php
 
 
-    require 'cookies.php';
     require 'database/DatabaseHelper.php';
 
     $config = require 'database/config.php';
@@ -42,11 +41,10 @@
     echo "<tr>
     <td></td>
     <td></td>
-    <td><button type='submit' class='btnsearch' name='citybutton'>City</button></td>
-    <td><button type='submit' class='btnsearch' name='countrybutton'>Country</button></td>
+    <td><button type='submit' class='btnsearch' name='citybutton'>ASC/DESC</button></td>
     <td></td>
     <td></td>
-    <td><button type='submit' class='btnsearch'>Rating</button></td>";
+    <td><button type='submit' class='btnsearch' name='ratingbutton'>ASC/DESC</button></td>";
     echo "</tr>";
     foreach ($queryResult as $value) {
 
