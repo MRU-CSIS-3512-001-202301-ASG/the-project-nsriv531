@@ -44,6 +44,7 @@
     <td><button type='submit' class='btnsearch' name='citybutton'>ASC/DESC</button></td>
     <td></td>
     <td></td>
+    <td></td>
     <td><button type='submit' class='btnsearch' name='ratingbutton'>ASC/DESC</button></td>";
     echo "</tr>";
     foreach ($queryResult as $value) {
