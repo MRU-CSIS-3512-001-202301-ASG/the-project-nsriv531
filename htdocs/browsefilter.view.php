@@ -30,9 +30,9 @@
     echo "<form method='get'>";
     echo "<table>
     <tr>
-    <td>  <input type='radio' id='cityradiobutton' name='fav_language' value='City'></td>
-    <td> <input type='radio' id='countryradiobutton' name='fav_language' value='Country'></td>
-    <td> <input type='radio' id='ratingradiobutton' name='fav_language' value='Rating'> </td>
+    <td> <input type='radio' id='cityradiobutton' name='fav_language' value='City'><label for='contactChoice1'>City</label></td>
+    <td> <input type='radio' id='countryradiobutton' name='fav_language' value='City'><label for='contactChoice1'>Country</label></td>
+    <td> <input type='radio' id='ratingradiobutton' name='fav_language' value='City'><label for='contactChoice1'>Rating</label></td>
     </tr>
     <tr>
     <td></td>

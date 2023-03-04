@@ -13,7 +13,6 @@ if (!isset($_SESSION["loginkey"])) {
     $andWHERE = "default";
     $andCondition = "default";
 
-
     if (!isset($_COOKIE["citycookie"]) && isset($_GET["citybutton"])) {
         unset($_COOKIE['ratingcookie']);
         $orderby = "City";
@@ -39,6 +38,7 @@ if (!isset($_SESSION["loginkey"])) {
         $orderby = "Rating";
         $orderASCDESC = "ASC";
         setcookie("ratingcookie", "ASC", time() + (86400 * 30), "/");
+
     } else if (isset($_COOKIE["ratingcookie"])  && isset($_GET["ratingbutton"])) {
 
         $orderby = "Rating";
