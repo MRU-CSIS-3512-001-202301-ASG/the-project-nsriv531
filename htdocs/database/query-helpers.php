@@ -1,22 +1,22 @@
 <?php
 
 
-function image_grabber($db_helper, $orderby, $orderASCDESC, $andWHERE, $andCondition)
+function image_grabber($db_helper, $orderby, $orderASCDESC, $andWHERE, $andClause)
 {
 
 
     if ($andWHERE == "default") {
 
         $orderwhereClause = "";
-    } else if ($andWHERE = "City") {
+    } else if ($andWHERE == "City") {
 
-        $orderwhereClause = "AND cities.Asciiname = '$andCondition'";
-    } else if ($andWHERE = "Country") {
+        $orderwhereClause = "AND cities.Asciiname = '$andClause'";
+    } else if ($andWHERE == "Country") {
 
-        $orderwhereClause = "AND countries.CountryName = '$andCondition'";
-    } else if ($andWHERE = "Rating") {
+        $orderwhereClause = "AND countries.CountryName = '$andClause'";
+    } else if ($andWHERE == "Rating") {
 
-        $orderwhereClause = "AND imagerating.Rating = $andCondition}";
+        $orderwhereClause = "AND imagerating.Rating = $andClause";
     }
 
     if ($orderby == "default") {

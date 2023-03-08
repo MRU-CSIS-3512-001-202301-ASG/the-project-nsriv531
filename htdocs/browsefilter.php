@@ -23,7 +23,6 @@ if (!isset($_SESSION["loginkey"])) {
         $orderby = "City";
 
         if ($_COOKIE["citycookie"] == "ASC") {
-
             setcookie("citycookie", "DESC", time() + (86400 * 30), "/");
             $orderASCDESC = "DESC";
         } else if ($_COOKIE["citycookie"] == "DESC") {
@@ -35,10 +34,10 @@ if (!isset($_SESSION["loginkey"])) {
 
     if (!isset($_COOKIE["ratingcookie"]) && isset($_GET["ratingbutton"])) {
         unset($_COOKIE['citycookie']);
+
         $orderby = "Rating";
         $orderASCDESC = "ASC";
         setcookie("ratingcookie", "ASC", time() + (86400 * 30), "/");
-
     } else if (isset($_COOKIE["ratingcookie"])  && isset($_GET["ratingbutton"])) {
 
         $orderby = "Rating";
@@ -54,11 +53,23 @@ if (!isset($_SESSION["loginkey"])) {
         }
     }
 
+    if (isset($_GET["cityradiobutton"]) && isset($_GET["searchbutton"])) {
 
+        $andWHERE = "City";
+        $andCondition = $_GET['searchtext'];
+    }
 
+    if (isset($_GET["countryradiobutton"]) && isset($_GET["searchbutton"])) {
 
+        $andWHERE = "Country";
+        $andCondition = $_GET['searchtext'];
+    }
 
+    if (isset($_GET["ratingradiobutton"]) && isset($_GET["searchbutton"])) {
 
+        $andWHERE = "Rating";
+        $andCondition = $_GET['searchtext'];
+    }
 
     require 'browsefilter.view.php';
 }

@@ -35,9 +35,8 @@
     <td> <input type='radio' id='ratingradiobutton' name='ratingradiobutton' value=''><label for='contactChoice1'>Rating</label></td>
     </tr>
     <tr>
-    <td></td>
-    <td></td>";
-    echo "<td><button type='submit' class='btnsearch'>Search</button></td>";
+    <td colspan='2'><input type='text' name='searchtext'></td>";
+    echo "<td><button type='submit' class='btnsearch' name='searchbutton'>Search</button></td>";
     echo "</tr>";
     echo "</table>";
     echo "</form>";
@@ -59,8 +58,8 @@
     <td><button type='submit' class='btnsearch' name='citybutton'>ASC/DESC</button></td>
     <td></td>
     <td></td>
-    <td><button type='submit' class='btnsearch' name='ratingbutton'>ASC/DESC</button></td>
-    <td></td>";
+    <td></td>
+    <td><button type='submit' class='btnsearch' name='ratingbutton'>ASC/DESC</button></td>";
     echo "</tr>";
     foreach ($queryResult as $value) {
 
