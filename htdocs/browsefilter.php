@@ -9,6 +9,8 @@ if (!isset($_SESSION["loginkey"])) {
 } else {
 
     $orderby = "default";
+    $changeInRating = "";
+    $imageID = "";
     $orderASCDESC = "default";
     $andWHERE = "default";
     $andCondition = "default";
@@ -73,11 +75,11 @@ if (!isset($_SESSION["loginkey"])) {
 
     for ($i = 1; $i <= 148; $i++) {
         $paramname = 'rateselector' . $i;
-        echo "triggered";
-        if (isset($_GET[$paramname]) && isset($_GET["searchbutton"])) {
+        if (!empty($_GET[$paramname]) && isset($_GET["submitbutton"])) {
+
             $changeInRating = $_GET[$paramname];
             $imageID = $i;
-            echo "selector has been set";
+            echo "triggered";
         }
     }
 

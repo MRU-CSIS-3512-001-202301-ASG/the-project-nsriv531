@@ -72,10 +72,17 @@
             "<td>" . $value["rating"] . "<input type='number' name='rateselector" . $value["ImageID"] . "' min='1' max='5'></td></tr>";
     }
     echo "</table>";
+    echo "<tr>
+    <td>
+    <button type='submit' class='btnsearch' name='submitbutton'>Submit</button>
+    </td>
+    </tr>";
     echo "</form>";
 
-    rating_Change($db_helper, $changeInRating, $imageID);
+    if (!empty($changeInRating) && !empty($imageID)) {
 
+        rating_Change($db_helper, $changeInRating, $imageID);
+    }
 
     ?>
 
