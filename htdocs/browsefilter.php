@@ -71,7 +71,15 @@ if (!isset($_SESSION["loginkey"])) {
         $andCondition = $_GET['searchtext'];
     }
 
+    for ($i = 1; $i <= 148; $i++) {
+        $paramname = 'rateselector' . $i;
+        echo "triggered";
+        if (isset($_GET[$paramname]) && isset($_GET["searchbutton"])) {
+            $changeInRating = $_GET[$paramname];
+            $imageID = $i;
+            echo "selector has been set";
+        }
+    }
 
-    
     require 'browsefilter.view.php';
 }
