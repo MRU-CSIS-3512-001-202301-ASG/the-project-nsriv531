@@ -69,7 +69,7 @@
             "<td>" . $value["CountryName"] . "</td>" .
             "<td>" . $value["Latitude"] . "</td>" .
             "<td>" . $value["Longitude"] . "</td>" .
-            "<td>" . $value["rating"] . "<input type='number' id='rateselector" . $value["ImageID"] . "' min='1' max='5'></input></td></tr>";
+            "<td>" . $value["rating"] . "<input type='number' id='rateselector" . $value["ImageID"] . "' min='1' max='5'></ value=" . $value["rating"] . "input></td></tr>";
     }
     echo "</table>";
     echo "</form>";

@@ -71,5 +71,7 @@ if (!isset($_SESSION["loginkey"])) {
         $andCondition = $_GET['searchtext'];
     }
 
+
+    
     require 'browsefilter.view.php';
 }

@@ -4,7 +4,6 @@
 function image_grabber($db_helper, $orderby, $orderASCDESC, $andWHERE, $andClause)
 {
 
-
     if ($andWHERE == "default") {
 
         $orderwhereClause = "";
@@ -54,6 +53,19 @@ function image_grabber($db_helper, $orderby, $orderASCDESC, $andWHERE, $andClaus
     return $db_helper->run($query)->fetchAll();
 }
 
+function rating_Change($db_helper, $changeInRating, $imageID)
+{
+
+    $query = <<<QUERY
+
+    UPDATE imagerating
+    SET imagerating.rating=$changeInRating
+    WHERE imagerating.ImageID = $imageID
+
+    QUERY;
+
+    return $db_helper->run($query);
+}
 
 function image_helper($imagepath)
 {
