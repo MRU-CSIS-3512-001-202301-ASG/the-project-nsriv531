@@ -12,9 +12,7 @@ if (!isset($_SESSION["loginkey"])) {
 
     header("Location: admin.php");
 } else {
-
     
-
     $orderby = "default";
     $changeInRating = "";
     $imageID = "";
