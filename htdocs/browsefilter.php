@@ -2,6 +2,11 @@
 
 session_start();
 
+require 'database/DatabaseHelper.php';
+$config = require 'database/config.php';
+$db_helper = new DatabaseHelper($config);
+
+require 'database/query-helpers.php';
 
 if (!isset($_SESSION["loginkey"])) {
 
@@ -79,9 +84,17 @@ if (!isset($_SESSION["loginkey"])) {
 
             $changeInRating = $_GET[$paramname];
             $imageID = $i;
-            echo "triggered";
         }
     }
+
+
+    if (!empty($changeInRating) && !empty($imageID)) {
+
+        rating_Change($db_helper, $changeInRating, $imageID);
+    }
+    $queryResult = image_grabber($db_helper, $orderby, $orderASCDESC, $andWHERE, $andCondition);
+
+
 
     require 'browsefilter.view.php';
 }

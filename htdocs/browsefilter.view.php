@@ -15,17 +15,21 @@
     <?php
 
 
-    require 'database/DatabaseHelper.php';
+    // require 'database/DatabaseHelper.php';
 
-    $config = require 'database/config.php';
+    // $config = require 'database/config.php';
 
-    $db_helper = new DatabaseHelper($config);
+    // $db_helper = new DatabaseHelper($config);
 
-    require 'database/query-helpers.php';
+    // require 'database/query-helpers.php';
 
 
-    $queryResult = image_grabber($db_helper, $orderby, $orderASCDESC, $andWHERE, $andCondition);
+    // $queryResult = image_grabber($db_helper, $orderby, $orderASCDESC, $andWHERE, $andCondition);
 
+    // if (!empty($changeInRating) && !empty($imageID)) {
+
+    //     rating_Change($db_helper, $changeInRating, $imageID);
+    // }
 
     echo "<form method='get'>";
     echo "<table>
@@ -41,7 +45,7 @@
     echo "</table>";
     echo "</form>";
 
-    echo "<form method='get'>";
+    echo "<form method='get' action='./browsefilter.php'>";
     echo "<table>";
     echo "<tr> 
     <td>ImageID</td> 
@@ -79,10 +83,6 @@
     </tr>";
     echo "</form>";
 
-    if (!empty($changeInRating) && !empty($imageID)) {
-
-        rating_Change($db_helper, $changeInRating, $imageID);
-    }
 
     ?>
 
