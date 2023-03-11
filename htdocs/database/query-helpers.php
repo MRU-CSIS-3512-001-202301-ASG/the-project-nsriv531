@@ -1,6 +1,15 @@
 <?php
 
 
+function user_authentication($db_helper)
+{
+
+    $userquery = <<<QUERY
+
+    QUERY;
+}
+
+
 function image_grabber($db_helper, $orderby, $orderASCDESC, $andWHERE, $andClause)
 {
 
