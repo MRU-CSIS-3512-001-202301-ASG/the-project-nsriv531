@@ -10,28 +10,10 @@
 
 <body>
     <title>Browse Filter Page - Dashboard</title>
-    <button type="submit">Logout</button>
 
     <?php
-
-
-    // require 'database/DatabaseHelper.php';
-
-    // $config = require 'database/config.php';
-
-    // $db_helper = new DatabaseHelper($config);
-
-    // require 'database/query-helpers.php';
-
-
-    // $queryResult = image_grabber($db_helper, $orderby, $orderASCDESC, $andWHERE, $andCondition);
-
-    // if (!empty($changeInRating) && !empty($imageID)) {
-
-    //     rating_Change($db_helper, $changeInRating, $imageID);
-    // }
-
     echo "<form method='get'>";
+    echo "<button type='submit' class = 'btnsearch'name='logoutbutton'>Logout</button>";
     echo "<table>
     <tr>
     <td> <input type='radio' id='cityradiobutton' name='cityradiobutton' value=''><label for='contactChoice1'>City</label></td>
@@ -44,8 +26,12 @@
     echo "</tr>";
     echo "</table>";
     echo "</form>";
-
-    echo "<form method='get' action='./browsefilter.php'>";
+    echo "<form method='get'>";
+    echo "<tr>
+    <td>
+    <button type='submit' class='btnsearch' name='submitbutton'>Change Rating</button>
+    </td>
+    </tr>";
     echo "<table>";
     echo "<tr> 
     <td>ImageID</td> 
@@ -76,13 +62,7 @@
             "<td>" . $value["rating"] . "<input type='number' name='rateselector" . $value["ImageID"] . "' min='1' max='5'></td></tr>";
     }
     echo "</table>";
-    echo "<tr>
-    <td>
-    <button type='submit' class='btnsearch' name='submitbutton'>Submit</button>
-    </td>
-    </tr>";
     echo "</form>";
-
 
     ?>
 

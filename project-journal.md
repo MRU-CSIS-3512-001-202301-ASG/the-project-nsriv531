@@ -12,4 +12,6 @@ Entry #3 -
 
 Right now im currently working on the UPDATE query. So far the UPDATE query works, however, i need to refresh the page multiple times for it to work.
 
+Entry #4 -
+
 

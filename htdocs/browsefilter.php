@@ -13,12 +13,18 @@ if (!isset($_SESSION["loginkey"])) {
     header("Location: admin.php");
 } else {
 
+    
+
     $orderby = "default";
     $changeInRating = "";
     $imageID = "";
     $orderASCDESC = "default";
     $andWHERE = "default";
     $andCondition = "default";
+
+    if (isset($_GET["logoutbutton"])) {
+        header('Location: admin.php');
+    }
 
     if (!isset($_COOKIE["citycookie"]) && isset($_GET["citybutton"])) {
         unset($_COOKIE['ratingcookie']);
@@ -87,11 +93,11 @@ if (!isset($_SESSION["loginkey"])) {
         }
     }
 
-
     if (!empty($changeInRating) && !empty($imageID)) {
 
         rating_Change($db_helper, $changeInRating, $imageID);
     }
+    
     $queryResult = image_grabber($db_helper, $orderby, $orderASCDESC, $andWHERE, $andCondition);
 
 
