@@ -8,7 +8,6 @@ if ($_SERVER['REQUEST_METHOD'] === "GET") {
     $passwordforgot = "";
 
     require 'adminview.php';
-    
 } else if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
     if (isset($_POST["username"]) && isset($_POST["password"])) {
@@ -16,12 +15,14 @@ if ($_SERVER['REQUEST_METHOD'] === "GET") {
         $username = $_POST["username"];
         $password = $_POST["password"];
 
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+
         if ($username == "admin" && $password == "password") {
 
             $_SESSION["loginkey"] = true;
 
             header("Location: browsefilter.php");
-
         } else {
 
             $passwordforgot = "Invalid username or password";

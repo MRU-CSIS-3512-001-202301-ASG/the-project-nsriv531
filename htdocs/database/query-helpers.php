@@ -6,9 +6,10 @@ function user_authentication($db_helper)
 
     $userquery = <<<QUERY
 
+    SELECT password FROM administrators WHERE username =
+
     QUERY;
 }
-
 
 function image_grabber($db_helper, $orderby, $orderASCDESC, $andWHERE, $andClause)
 {
