@@ -21,6 +21,7 @@ if (!isset($_SESSION["loginkey"])) {
     $andCondition = "default";
 
     if (isset($_GET["logoutbutton"])) {
+        unset($_SESSION["loginkey"]);
         header('Location: admin.php');
     }
 
