@@ -1,17 +1,21 @@
 # Project Journal
 
-Entry #1 -
+Week of 2023-01-09
 
-Started off with making the base page for the login page. The php is working and so far th
+Started looking at differnet frameworks that could be used and got a basic login page working. 
 
-Entry #2 -
+Week of 2023-01-16
 
-The organization for the files is not correct, however, this will be fixed later when integrating proper MVC framework.
+Continued to work on the login page
 
-Entry #3 -
+Week of 2023-01-23
+Week of 2023-01-30
 
-Right now im currently working on the UPDATE query. So far the UPDATE query works, however, i need to refresh the page multiple times for it to work.
-
-Entry #4 -
-
-
+Week of 2023-02-06
+Week of 2023-02-13
+Week of 2023-02-20 (READING WEEK)
+Week of 2023-02-27
+Week of 2023-03-06
+Week of 2023-03-13
+Week of 2023-03-20
+Week of 2023-03-27
