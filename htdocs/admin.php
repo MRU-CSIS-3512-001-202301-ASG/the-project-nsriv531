@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === "GET") {
         $username = $_POST["username"];
         $password = $_POST["password"];
 
-        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+        $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
 
         if ($username == "admin" && $password == "password") {
