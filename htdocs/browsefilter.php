@@ -19,6 +19,7 @@ if (!isset($_SESSION["loginkey"])) {
     $orderASCDESC = "default";
     $andWHERE = "default";
     $andCondition = "default";
+    $emptyQuery = "";
 
     if (isset($_GET["logoutbutton"])) {
         unset($_SESSION["loginkey"]);
@@ -99,6 +100,9 @@ if (!isset($_SESSION["loginkey"])) {
     
     $queryResult = image_grabber($db_helper, $orderby, $orderASCDESC, $andWHERE, $andCondition);
 
+    if (empty($queryResult)) {
+        $emptyQuery = "Filter produced no results.";
+    }
 
 
     require 'browsefilter.view.php';

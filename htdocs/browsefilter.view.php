@@ -52,7 +52,6 @@
     <td><button type='submit' class='btnsearch' name='ratingbutton'>ASC/DESC</button></td>";
     echo "</tr>";
     foreach ($queryResult as $value) {
-
         echo "<tr><td>" . $value["ImageID"] . " </td>" .
             "<td><img src=" . image_helper($value["Path"]) . "></img></td>" .
             "<td>" . $value["AsciiName"] . "</td>" .
@@ -63,6 +62,8 @@
     }
     echo "</table>";
     echo "</form>";
+    echo $emptyQuery;
+
 
     ?>
 
