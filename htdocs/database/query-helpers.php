@@ -11,6 +11,16 @@ function user_authentication($db_helper)
     QUERY;
 }
 
+
+function ddropfinder($db_helper, $city_code)
+{
+
+    $apiquery = <<<QUERY
+
+    
+    QUERY;
+}
+
 function image_grabber($db_helper, $orderby, $orderASCDESC, $andWHERE, $andClause)
 {
 

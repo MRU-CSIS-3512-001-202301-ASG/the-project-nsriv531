@@ -10,16 +10,35 @@ Continued to work on the login page, made sure the form was properly working, as
 
 Week of 2023-01-23
 
-Managed to get the form to go the dashboard page once the user entered admin and password
-
+Managed to get the form to go the dashboard page once the user entered admin and password, now the dashboard just needs to be properly be implemented.
 
 Week of 2023-01-30
 
+Continued to work on the base form for the browsefilter page. Added the proper php files for the admin and the browsefilter pages. 
+
 Week of 2023-02-06
+
+Fixed the issue where if the user goes to the browsefilterpage without logging in, the user is redirected to the admin page.
+
 Week of 2023-02-13
+
+Did not work on the project this week...busy with other courses :/
+
 Week of 2023-02-20 (READING WEEK)
+
+Continued to work admin page, modified the login keys, and worked on teh query that will be used to display all the images and associated columns for the data that is needed.
+
 Week of 2023-02-27
+
+Worked on the filtors for acending and decending for the images, got them to store into cookies so they could properly work.
+
 Week of 2023-03-06
+
+Worked on being able to search for specifc countries, cities, and ratings, also worked on being able to change the ratings and have it update the table accordingly when the rating is submitted. During this process, the log out button was also worked on, allowing the user to log out. Still need to figure out how to have the cookies to properly store when the user logs back in, and have that cookie last 24 hours.
+
 Week of 2023-03-13
+
+Worked on the API for ddrop.php and have it reflect the proper JSON accordingly,
+
 Week of 2023-03-20
 Week of 2023-03-27
