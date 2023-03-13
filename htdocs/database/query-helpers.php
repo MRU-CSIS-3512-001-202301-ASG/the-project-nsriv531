@@ -11,7 +11,7 @@ function user_authentication($db_helper)
     INNER JOIN imagerating ON imagedetails.ImageID  = imagerating.ImageID  
     INNER JOIN cities ON imagedetails.CityCode = cities.CityCode 
     INNER JOIN countries ON cities.CountryCodeISO = countries.ISO 
-    WHERE imagerating.UserID = 23 AND imagerating.rating = 3
+    WHERE imagerating.UserID = 23 AND imagerating.Rating = 3
 
     QUERY;
 
