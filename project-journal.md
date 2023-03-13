@@ -38,7 +38,7 @@ Worked on being able to search for specifc countries, cities, and ratings, also 
 
 Week of 2023-03-13
 
-Worked on the API for ddrop.php and have it reflect the proper JSON accordingly,
+Worked on the API for ddrop.php and have it reflect the proper JSON accordingly, did this by adding the query to the query helpers as well as,
 
 Week of 2023-03-20
 Week of 2023-03-27
