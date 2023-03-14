@@ -30,6 +30,4 @@ if ($ddrop) {
 //header("HTTP/1.1 200 OK");
 header("Content-Type: application/json");
 
-//var_dump($resp);
-
 echo ($resp);
