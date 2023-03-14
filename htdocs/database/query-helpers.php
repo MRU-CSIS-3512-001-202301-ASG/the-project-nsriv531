@@ -3,8 +3,20 @@
 
 function user_authentication($db_helper)
 {
+
 }
 
+
+function ddropfindercity($db_helper, $citycode)
+{
+    $apicityquery = <<<QUERY
+
+
+
+    QUERY;
+
+    return $db_helper->run($apicityquery)->fetchAll();
+}
 
 function ddropfinder($db_helper)
 {

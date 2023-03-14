@@ -12,6 +12,8 @@ require '../database/query-helpers.php';
 $db_helper = new DatabaseHelper($config);
 
 $ddrop = ddropfinder($db_helper);
+$$ddrop = ddropfindercity($db_helper, $_GET['city']);
+)
 
 if ($ddrop) {
 
