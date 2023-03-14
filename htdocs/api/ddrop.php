@@ -1,22 +1,24 @@
 <?php
 
 
-require 'database/DatabaseHelper.php';
+require '../database/DatabaseHelper.php';
 
-$config = require 'database/config.php';
+$config = require '../database/config.php';
+
+
+require '../database/query-helpers.php';
+
 
 $db_helper = new DatabaseHelper($config);
 
-$ddrop = ddropfinder($db_helper, $_GET['city']);
+$ddrop = ddropfinder($db_helper);
 
-if ($ddrop){
+if ($ddrop) {
 
-    $total_count = count($ddropfinder);
+    $total_count = count($ddrop);
     $data = array(
         "total_count" => $total_count,
         "drops" => $ddrop
-
-
     );
 
     $resp = json_encode($data);

@@ -3,11 +3,15 @@
 
 function user_authentication($db_helper)
 {
+}
 
-    $userquery = <<<QUERY
 
-    SELECT imagedetails.ImageID, imagedetails.Path, cities.AsciiName, countries.CountryName, imagedetails.Latitude, 
-    imagedetails.Longitude, imagerating.rating FROM imagedetails 
+function ddropfinder($db_helper)
+{
+    $apiquery = <<<QUERY
+
+    SELECT cities.AsciiName AS city, countries.CountryName AS country, imagedetails.Latitude AS lat, 
+    imagedetails.Longitude as 'long' FROM imagedetails 
     INNER JOIN imagerating ON imagedetails.ImageID  = imagerating.ImageID  
     INNER JOIN cities ON imagedetails.CityCode = cities.CityCode 
     INNER JOIN countries ON cities.CountryCodeISO = countries.ISO 
@@ -15,18 +19,7 @@ function user_authentication($db_helper)
 
     QUERY;
 
-    return $db_helper->run($userquery)->fetch_all();
-
-}
-
-
-function ddropfinder($db_helper, $city_code)
-{
-
-    $apiquery = <<<QUERY
-
-    
-    QUERY;
+    return $db_helper->run($apiquery)->fetchAll();
 }
 
 function image_grabber($db_helper, $orderby, $orderASCDESC, $andWHERE, $andClause)
