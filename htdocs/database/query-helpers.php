@@ -24,6 +24,8 @@ function ddropfindercity($db_helper, $citycode)
 
 function ddropfinder($db_helper)
 {
+
+
     $apiquery = <<<QUERY
 
     SELECT cities.AsciiName AS city, countries.CountryName AS country, imagedetails.Latitude AS lat, 
@@ -31,11 +33,13 @@ function ddropfinder($db_helper)
     INNER JOIN imagerating ON imagedetails.ImageID  = imagerating.ImageID  
     INNER JOIN cities ON imagedetails.CityCode = cities.CityCode 
     INNER JOIN countries ON cities.CountryCodeISO = countries.ISO 
-    WHERE imagerating.UserID = 23 AND imagerating.Rating = 3
+    WHERE imagerating.UserID = 23 AND imagerating.Rating = 3 
 
     QUERY;
 
-    return $db_helper->run($apiquery)->fetchAll();
+
+  return $db_helper->run($apiquery)->fetchAll();
+
 }
 
 function image_grabber($db_helper, $orderby, $orderASCDESC, $andWHERE, $andClause)

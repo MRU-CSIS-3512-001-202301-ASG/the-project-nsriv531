@@ -39,9 +39,7 @@ Worked on being able to search for specifc countries, cities, and ratings, also 
 Week of 2023-03-13
 
 Worked on the API for ddrop.php and have it reflect the proper JSON accordingly, did this by adding the query to the query helpers as well as, refering to tutorial 6? Whichever one was the one where 
-we fooled around the API's. 
-
-So far, it spits out all everything where the rating is 3 and the user id is 23. There's 24 deaddrops i guess?
+we fooled around the API's. So far, it spits out all everything where the rating is 3 and the user id is 23. There's 24 deaddrops i guess? When a city code is entered, it will show the number of drops, so the $_GET is working with the query string.
 
 Week of 2023-03-20
 Week of 2023-03-27

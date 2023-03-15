@@ -5,7 +5,6 @@ require '../database/DatabaseHelper.php';
 
 $config = require '../database/config.php';
 
-
 require '../database/query-helpers.php';
 
 
@@ -22,14 +21,18 @@ if (!isset($_GET['city'])) {
     );
 
     $resp = json_encode($data);
+
 } else if (isset($_GET['city'])) {
+
     $num_drops = ddropfindercity($db_helper, $_GET['city']);
-    $total_count = count($num_drops);
+
+    $actualCount = count($num_drops);
     $data = array(
-        "num_drops" => $total_count
+        "num_drops" => $actualCount
     );
 
     $resp = json_encode($data);
+
 } else {
 
     $resp = json_encode([]);
@@ -38,4 +41,4 @@ if (!isset($_GET['city'])) {
 //header("HTTP/1.1 200 OK");
 header("Content-Type: application/json");
 
-echo ($resp);
+echo $resp;
