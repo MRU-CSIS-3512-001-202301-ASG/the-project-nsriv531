@@ -38,8 +38,7 @@ function ddropfinder($db_helper)
     QUERY;
 
 
-  return $db_helper->run($apiquery)->fetchAll();
-
+    return $db_helper->run($apiquery)->fetchAll();
 }
 
 function image_grabber($db_helper, $orderby, $orderASCDESC, $andWHERE, $andClause)
@@ -106,6 +105,13 @@ function rating_Change($db_helper, $changeInRating, $imageID)
     QUERY;
 
     return $db_helper->run($query);
+}
+
+
+function temp_password_inserter()
+{
+
+    $variable = password_hash("password", PASSWORD_BCRYPT);
 }
 
 function image_helper($imagepath)
