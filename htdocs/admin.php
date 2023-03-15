@@ -27,6 +27,17 @@ if ($_SERVER['REQUEST_METHOD'] === "GET") {
 
             $passwordforgot = "Invalid username or password";
 
+            $variable = password_hash("password", PASSWORD_BCRYPT);
+
+            echo $variable;
+
+            $otherVariable = password_verify("password", $variable);
+
+
+            if ($otherVariable == true) {
+                echo "true";
+            }
+
             require 'adminview.php';
         }
     }
