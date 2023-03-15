@@ -3,7 +3,6 @@
 
 function user_authentication($db_helper)
 {
-
 }
 
 
@@ -11,11 +10,16 @@ function ddropfindercity($db_helper, $citycode)
 {
     $apicityquery = <<<QUERY
 
-
+    SELECT cities.CityCode, cities.AsciiName AS city, countries.CountryName AS country, imagedetails.Latitude AS lat, 
+    imagedetails.Longitude as 'long' FROM imagedetails 
+    INNER JOIN imagerating ON imagedetails.ImageID  = imagerating.ImageID  
+    INNER JOIN cities ON imagedetails.CityCode = cities.CityCode 
+    INNER JOIN countries ON cities.CountryCodeISO = countries.ISO 
+    WHERE imagerating.UserID = 23 AND imagerating.Rating = 3 and cities.CityCode = :citycode
 
     QUERY;
 
-    return $db_helper->run($apicityquery)->fetchAll();
+    return $db_helper->run($apicityquery, [":citycode" => $citycode])->fetchAll();
 }
 
 function ddropfinder($db_helper)
