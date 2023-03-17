@@ -1,6 +1,5 @@
 <?php
 
-
 require 'database/DatabaseHelper.php';
 $config = require 'database/config.php';
 $db_helper = new DatabaseHelper($config);
