@@ -3,6 +3,14 @@
 
 function user_authentication($db_helper)
 {
+
+    $userauthentication = <<<QUERY
+
+    SELECT * FROM administrators
+
+    QUERY;
+
+    return $db_helper->run($userauthentication)->fetch();
 }
 
 
