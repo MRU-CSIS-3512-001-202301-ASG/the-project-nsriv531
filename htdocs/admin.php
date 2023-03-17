@@ -8,6 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === "GET") {
     $passwordforgot = "";
 
     require 'adminview.php';
+
 } else if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
     if (isset($_POST["username"]) && isset($_POST["password"])) {
@@ -16,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === "GET") {
         $password = $_POST["password"];
 
         $hashed_password = password_hash($password, PASSWORD_BCRYPT);
-
+         echo $hashed_password;
 
         if ($username == "admin" && $password == "password") {
 
