@@ -1,4 +1,4 @@
-async fetch('api/getcountries.php', {
+fetch('api/getcountries.php', {
     headers: {
         'Accept': 'application/json'
     }
