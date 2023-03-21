@@ -1,6 +1,4 @@
-const countries = [];
-
-fetch('api/getcountries.php', {
+async fetch('api/getcountries.php', {
     headers: {
         'Accept': 'application/json'
     }
@@ -12,7 +10,6 @@ fetch('api/getcountries.php', {
         return response.json();
     })
     .then(data => {
-        // Extract the country names and create a new array
         const countries = data.map(country => country.CountryName);
         console.log(countries);
     })
