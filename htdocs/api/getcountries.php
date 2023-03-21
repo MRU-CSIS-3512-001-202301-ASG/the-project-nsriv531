@@ -1,7 +1,5 @@
 <?php
 
-
-
 require '../database/DatabaseHelper.php';
 
 $config = require '../database/config.php';
@@ -31,5 +29,3 @@ else {
 header("Content-Type: application/json");
 
 echo $resp;
-
-?>
