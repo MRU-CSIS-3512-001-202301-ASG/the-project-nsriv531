@@ -7,8 +7,9 @@ $config = require '../database/config.php';
 
 require '../database/query-helpers.php';
 
-
 $db_helper = new DatabaseHelper($config);
+
+
 
 $ddrop = ddropfinder($db_helper);
 

@@ -1,5 +1,16 @@
 <?php
 
+function get_countries($db_helper) {
+
+$countiresQuery = <<<QUERY
+
+SELECT CountryName FROM countries
+
+QUERY;
+
+return $db_helper->run($countiresQuery)->fetchAll();
+
+}
 
 function user_authentication($db_helper)
 {
