@@ -43,7 +43,8 @@ we fooled around the API's. So far, it spits out all everything where the rating
 
 Password hashing is also somewhat completed. Now its time to start on the JSCRIPT stuff, which will be interesting to see...
 
-
-
 Week of 2023-03-20
+
+There is now a div that displays a simple array I made in javacript. Now I need to figure out how to get the json object to return the assorted country names.
+
 Week of 2023-03-27

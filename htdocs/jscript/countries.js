@@ -1,4 +1,6 @@
-fetch('api/getcountries.php', {
+const countryDiv = document.getElementById("countrydiv");
+
+fetch('../api/getcountries.php', {
     headers: {
         'Accept': 'application/json'
     }
@@ -10,19 +12,20 @@ fetch('api/getcountries.php', {
         return response.json();
     })
     .then(data => {
-        const countries = data.map(country => country.CountryName);
-        console.log(countries);
+        if (!Array.isArray(data)) {
+            throw new Error('Invalid data format');
+        }
+
+        const country = data.country.map(countries => countries.CountryName);
+
+        console.log(country);
+
+        for (var i = 0; i < country.length; i++) {
+            var countryItem = document.createElement("p");
+            countryItem.textContent = country[i];
+            countryDiv.appendChild(countryItem);
+        }
     })
     .catch(error => {
         console.error('There was a problem with the fetch operation:', error);
     });
-
-var countryDiv = document.getElementById("countrydiv");
-
-for (var i = 0; i < countries.length; i++) {
-
-    var countryItem = document.createElement("p");
-    countryItem.textContent = countries[i];
-
-    countryDiv.appendChild(countryItem);
-}

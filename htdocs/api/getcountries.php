@@ -8,7 +8,6 @@ require '../database/query-helpers.php';
 
 $db_helper = new DatabaseHelper($config);
 
-
 $countries = get_countries($db_helper);
 
 if ($countries) {
@@ -18,9 +17,7 @@ if ($countries) {
     );
 
     $resp = json_encode($data);
-}
-
-else {
+} else {
 
     $resp = json_encode([]);
 }
