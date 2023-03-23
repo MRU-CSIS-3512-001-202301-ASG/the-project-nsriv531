@@ -12,12 +12,11 @@ fetch('http://127.0.0.1:8080/api/getcountries.php')
 
         console.log(country);
 
-        for (var i = 0; i < country.length; i++) {
-            var countryItem = document.createElement("p");
-            countryItem.textContent = country[i];
-            countryDiv.appendChild(countryItem);
+        for (const countryItem of country) {
+            const countryElement = document.createElement("p");
+            countryElement.textContent = countryItem;
+            countryDiv.appendChild(countryElement);
         }
-
     })
     .catch(error => {
         console.error('There was a problem with the fetch operation:', error);
