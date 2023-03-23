@@ -32,3 +32,8 @@ button:active {
     color: rgba(14, 11, 11, 0.885);
 
 }
+
+.clicked {
+
+    font-style: italic;
+}

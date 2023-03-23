@@ -15,7 +15,6 @@ fetch('http://127.0.0.1:8080/api/getcountries.php')
             countryElement.textContent = countryItem;
             countryDiv.appendChild(countryElement);
             countryElement.addEventListener("click", function () {
-
                 countryElement.classList.add("clicked");
 
             });
