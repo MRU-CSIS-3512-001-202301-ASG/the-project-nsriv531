@@ -6,10 +6,9 @@ function image_from_countries_and_cities($db_helper, $countrySelected, $citySele
 
     $imagefromCountry = <<<QUERY
 
-    SELECT imagedetails.Path, cities.AsciiName FROM imagedetails 
+    SELECT imagedetails.Path FROM imagedetails 
     INNER JOIN cities ON imagedetails.CityCode = cities.CityCode
     WHERE cities.CountryCodeISO = '$countrySelected' $citySelected
-    
     QUERY;
 }
 
