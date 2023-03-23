@@ -1,15 +1,15 @@
 <?php
 
-function get_countries($db_helper) {
+function get_countries($db_helper)
+{
 
-$countiresQuery = <<<QUERY
+    $countiresQuery = <<<QUERY
 
-SELECT CountryName FROM countries
-
+    SELECT CountryName FROM countries ORDER BY CountryName ASC
+    
 QUERY;
 
-return $db_helper->run($countiresQuery)->fetchAll();
-
+    return $db_helper->run($countiresQuery)->fetchAll();
 }
 
 function user_authentication($db_helper)
