@@ -6,8 +6,6 @@ fetch('http://127.0.0.1:8080/api/getcountries.php')
     })
     .then(data => {
 
-        console.log(data)
-
         const country = data.countries.map(countries => countries.CountryName);
 
         console.log(country);

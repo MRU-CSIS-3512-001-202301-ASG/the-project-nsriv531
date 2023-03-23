@@ -18,3 +18,17 @@ button {
     background-color: lightblue;
     text-align: center;
 }
+
+button:hover {
+
+    background-color: rgb(227, 227, 63);
+    color: white;
+
+}
+
+button:active {
+
+    background-color: rgba(252, 109, 0, 0.986);
+    color: rgba(14, 11, 11, 0.885);
+
+}
