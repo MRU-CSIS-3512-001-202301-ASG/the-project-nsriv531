@@ -1,0 +1,20 @@
+body {
+    display: flex;
+    justify-content: flex-start;
+}
+
+button {
+    background-color: #20e15a;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 5%;
+}
+
+#countrydiv {
+    border: 5px outset red;
+    background-color: lightblue;
+    text-align: center;
+}
