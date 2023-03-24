@@ -1,17 +1,18 @@
 <?php
 
 
-function get_cities($db_helper) {
+function get_cities($db_helper)
+{
 
-$cities = <<<QUERY
+    $cities = <<<QUERY
 
 SELECT cities.AsciiName FROM cities 
 
 QUERY;
-
 }
 
-function countryInformation($db_helper) {
+function countryInformation($db_helper)
+{
 
     $countryInfo = <<<QUERY
     SELECT DISTINCT countries.CountryName,  countries.ISO, countries.Area, countries.Population, countries.Capital, countries.CurrencyName, 
@@ -21,17 +22,33 @@ function countryInformation($db_helper) {
     QUERY;
 }
 
-function image_from_countries($db_helper)
+// function image_from_cities_and_countries($db_helper)
+// {
+
+//     $imagefromCountry = <<<QUERY
+
+//     SELECT imagedetails.Path, cities.CountryCodeISO FROM imagedetails 
+//     INNER JOIN cities ON imagedetails.CityCode = cities.CityCode
+//     WHERE cities.CountryCodeISO = : isocode 
+
+//     QUERY;
+
+//     return $db_helper->run($imagefromCountry, [":isocode"])->fetchAll();
+// }
+
+
+function image_from_countries($db_helper, $iso)
 {
 
     $imagefromCountry = <<<QUERY
 
     SELECT imagedetails.Path, cities.CountryCodeISO FROM imagedetails 
     INNER JOIN cities ON imagedetails.CityCode = cities.CityCode
+    WHERE cities.CountryCodeISO = :ISOCode
 
     QUERY;
 
-    return $db_helper->run($imagefromCountry)->fetchAll();
+    return $db_helper->run($imagefromCountry, [":ISOCode" => $iso])->fetchAll();
 }
 
 function get_countries($db_helper)

@@ -8,7 +8,7 @@ require '../database/query-helpers.php';
 
 $db_helper = new DatabaseHelper($config);
 
-$imageCountry = image_from_countries($db_helper);
+$imageCountry = image_from_countries($db_helper, $_GET['ISO']);
 
 if ($imageCountry) {
 

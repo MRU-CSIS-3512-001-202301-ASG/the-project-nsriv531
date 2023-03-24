@@ -1,5 +1,5 @@
 export function setImageSource(countryISO) {
-    fetch('http://127.0.0.1:8080/api/getimagesfromcountries.php')
+    fetch('http://127.0.0.1:8080/api/imagesfromcountries.php?ISO=', countryISO)
         .then(response => {
             return response.json();
         })

@@ -1,4 +1,4 @@
-import { setImageSource } from './imagecountries.js';
+import { setImageSource } from './images.js';
 const countryDiv = document.getElementById("countrydiv");
 const fillerDiv = document.getElementsByClassName("filler");
 
@@ -15,7 +15,7 @@ fetch('http://127.0.0.1:8080/api/getcountries.php')
             const countryISO = isograbber[index];
             const countryElement = document.createElement("p");
             countryElement.textContent = countryItem;
-            countryElement.id=countryISO;
+            countryElement.id = countryISO;
             countryDiv.appendChild(countryElement);
             countryElement.addEventListener("click", function () {
                 setImageSource(countryElement.id);
