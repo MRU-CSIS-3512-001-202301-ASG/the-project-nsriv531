@@ -1,27 +1,37 @@
 <?php
 
 
-function image_from_countries_and_cities($db_helper, $countrySelected, $citySelected)
-{
+function get_cities($db_helper) {
 
-    $imagefromCountry = <<<QUERY
+$cities = <<<QUERY
 
-    SELECT imagedetails.Path FROM imagedetails 
-    INNER JOIN cities ON imagedetails.CityCode = cities.CityCode
-    WHERE cities.CountryCodeISO = '$countrySelected' $citySelected
+SELECT cities.AsciiName FROM cities 
+
+QUERY;
+
+}
+
+function countryInformation($db_helper) {
+
+    $countryInfo = <<<QUERY
+    SELECT DISTINCT countries.CountryName,  countries.ISO, countries.Area, countries.Population, countries.Capital, countries.CurrencyName, 
+    countries.TopLevelDomain, countries.CountryDescription, countries.Languages, countries.Neighbours 
+    FROM imagedetails 
+    INNER JOIN countries ON imagedetails.CountryCodeISO  = countries.ISO 
     QUERY;
 }
 
-function image_from_countries($db_helper, $countrySelected)
+function image_from_countries($db_helper)
 {
 
     $imagefromCountry = <<<QUERY
 
-    SELECT imagedetails.Path, cities.AsciiName FROM imagedetails 
+    SELECT imagedetails.Path, cities.CountryCodeISO FROM imagedetails 
     INNER JOIN cities ON imagedetails.CityCode = cities.CityCode
-    WHERE cities.CountryCodeISO = '$countrySelected'
 
     QUERY;
+
+    return $db_helper->run($imagefromCountry)->fetchAll();
 }
 
 function get_countries($db_helper)
@@ -29,7 +39,7 @@ function get_countries($db_helper)
 
     $countiresQuery = <<<QUERY
 
-    SELECT CountryName FROM countries ORDER BY CountryName ASC
+    SELECT CountryName, ISO FROM countries ORDER BY CountryName ASC
     
 QUERY;
 

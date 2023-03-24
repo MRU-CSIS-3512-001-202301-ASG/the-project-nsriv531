@@ -1,4 +1,5 @@
 const countryDiv = document.getElementById("countrydiv");
+const fillerDiv = document.getElementsByClassName("filler");
 
 fetch('http://127.0.0.1:8080/api/getcountries.php')
     .then(response => {
@@ -7,16 +8,17 @@ fetch('http://127.0.0.1:8080/api/getcountries.php')
     .then(data => {
 
         const country = data.countries.map(countries => countries.CountryName);
+        const isograbber = data.countries.map(countries => countries.ISO);
 
-        for (const countryItem of country) {
+        for (const [index, countryItem] of country.entries()) {
+            const countryISO = isograbber[index];
             const countryElement = document.createElement("p");
             countryElement.textContent = countryItem;
+            countryElement.id=countryISO;
             countryDiv.appendChild(countryElement);
             countryElement.addEventListener("click", function () {
-
+                fillerDiv.style.visibility = "visible";
                 countryElement.classList.add("clicked");
-
-
             });
         }
     })
