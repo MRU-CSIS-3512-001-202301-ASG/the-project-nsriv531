@@ -22,21 +22,6 @@ function countryInformation($db_helper)
     QUERY;
 }
 
-// function image_from_cities_and_countries($db_helper)
-// {
-
-//     $imagefromCountry = <<<QUERY
-
-//     SELECT imagedetails.Path, cities.CountryCodeISO FROM imagedetails 
-//     INNER JOIN cities ON imagedetails.CityCode = cities.CityCode
-//     WHERE cities.CountryCodeISO = : isocode 
-
-//     QUERY;
-
-//     return $db_helper->run($imagefromCountry, [":isocode"])->fetchAll();
-// }
-
-
 function image_from_countries($db_helper, $iso)
 {
 
