@@ -1,3 +1,4 @@
+import { setImageSource } from './imagecountries.js';
 const countryDiv = document.getElementById("countrydiv");
 const fillerDiv = document.getElementsByClassName("filler");
 
@@ -17,8 +18,7 @@ fetch('http://127.0.0.1:8080/api/getcountries.php')
             countryElement.id=countryISO;
             countryDiv.appendChild(countryElement);
             countryElement.addEventListener("click", function () {
-                fillerDiv.style.visibility = "visible";
-                countryElement.classList.add("clicked");
+                setImageSource(countryElement.id);
             });
         }
     })
