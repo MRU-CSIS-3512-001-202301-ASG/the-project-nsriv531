@@ -9,16 +9,22 @@ export function setImageSource(countryISO) {
             console.log(imagePaths);
             const fillerDiv = document.querySelector('.filler');
 
-            const existingPElements = fillerDiv.querySelectorAll('p');
-            existingPElements.forEach(p => p.remove());
+            const existingPElements = fillerDiv.querySelectorAll('img');
+            existingPElements.forEach(img => img.remove());
 
             imagePaths.forEach(imagepath => {
-                const pathPara = document.createElement("p");
-                pathPara.textContent = imagepath;
+                const pathPara = document.createElement("img");
+                pathPara.src = imageMaker(imagepath);
                 fillerDiv.appendChild(pathPara);
             });
         })
         .catch(error => {
             console.error('There was a problem with the fetch operation:', error);
         });
+}
+
+function imageMaker(theImage) {
+
+    return `https://res.cloudinary.com/dlf6zmtga/image/upload/c_scale,w_300,h_300/v1673638741/${theImage}`;
+
 }
