@@ -6,11 +6,10 @@ export function setImageSource(countryISO) {
         })
         .then(data => {
             const imagePaths = data.imagepath.map(image => image.Path);
-            console.log(imagePaths);
             const fillerDiv = document.querySelector('.filler');
 
-            const existingPElements = fillerDiv.querySelectorAll('img');
-            existingPElements.forEach(img => img.remove());
+            const existingImgElements = fillerDiv.querySelectorAll('img');
+            existingImgElements.forEach(img => img.remove());
 
             imagePaths.forEach(imagepath => {
                 const pathPara = document.createElement("img");
