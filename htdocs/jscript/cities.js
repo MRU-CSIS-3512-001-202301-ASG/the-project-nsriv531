@@ -16,6 +16,12 @@ export function getCity(countryISO) {
                 const pathPara = document.createElement("p");
                 pathPara.textContent = cities;
                 citiesDiv.appendChild(pathPara);
+                pathPara.addEventListener("click", function () {
+                    
+                    getCityInfo(countryElement.id);
+                    setCityImageSource(countryElement.id);
+    
+                });
             });
         })
         .catch(error => {
