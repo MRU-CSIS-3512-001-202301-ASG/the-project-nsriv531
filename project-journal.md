@@ -10,7 +10,7 @@ Web 2 is goddamn intimidating but im confidant ill succeed. I really like there.
 Week of 2023-01-16
 
 
-Poor vik seems to be having a rough time....too bad it sucks when you see people in need of help, but all you can do is listen and be there on the sidelines...also DAMN, Nate's in a mood too? This is why
+Poor vik seems to be having a rough time....too bad it sucks when you see people in need of help, but all you can do is listen and be there on the sidelines...also DAMN, Nate's in a mood too? This is why relationships suck...
 
 
 Continued to work on the login page, made sure the form was properly working, assigned a method to the associated form.

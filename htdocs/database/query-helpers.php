@@ -6,9 +6,8 @@ function get_cities($db_helper, $iso)
 
     $cities = <<<QUERY
 
-    SELECT DISTINCT cities.AsciiName FROM cities 
-    INNER JOIN countries ON cities.CountryCodeISO = countries.ISO 
-    WHERE countries.ISO = :country_iso
+    SELECT DISTINCT AsciiName FROM cities 
+    WHERE CountryCodeISO = :country_iso
     ORDER BY cities.AsciiName 
 
 QUERY;
@@ -44,6 +43,18 @@ function countryInformation($db_helper, $iso)
     QUERY;
     
     return $db_helper->run($countryInfo, [":country_iso" => $iso])->fetchAll();
+
+}
+
+function cityInformation($db_helper, $cityname) {
+
+    $cityInfo = <<<QUERY
+    SELECT AsciiName, Population, Elevation, TimeZone 
+    FROM cities
+    WHERE Asciiname = :city_Name
+    QUERY;
+    
+    return $db_helper->run($cityInfo, [":city_Name" => $cityname])->fetchAll();
 
 }
 
