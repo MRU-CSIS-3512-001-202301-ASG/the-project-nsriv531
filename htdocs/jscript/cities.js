@@ -22,9 +22,3 @@ export function getCity(countryISO) {
             console.error('There was a problem with the fetch operation:', error);
         });
 }
-
-function imageMaker(theImage) {
-
-    return `https://res.cloudinary.com/dlf6zmtga/image/upload/c_scale,w_300,h_300/v1673638741/${theImage}`;
-
-}

@@ -28,7 +28,7 @@ function countryInformation($db_helper, $iso)
     WHERE CountryCodeISO = :country_iso
     QUERY;
     
-    return $db_helper->run($countryInfo, [":country_iso" => $iso])->fetch();
+    return $db_helper->run($countryInfo, [":country_iso" => $iso])->fetchAll();
 
 }
 

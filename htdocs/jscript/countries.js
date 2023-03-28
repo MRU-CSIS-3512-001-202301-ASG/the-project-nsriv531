@@ -1,5 +1,6 @@
 import { setImageSource } from './images.js';
 import {getCity} from './cities.js';
+import {getCountryInfo} from './countryinfo.js';
 
 const countryDiv = document.getElementById("countrydiv");
 const fillerDiv = document.getElementsByClassName("filler");
@@ -14,7 +15,6 @@ fetch('http://127.0.0.1:8080/api/getcountries.php')
         const isograbber = data.countries.map(countries => countries.ISO);
 
         for (const [index, countryItem] of country.entries()) {
-            console.log("inside loop");
             const countryISO = isograbber[index];
             const countryElement = document.createElement("p");
             countryElement.textContent = countryItem;
@@ -23,7 +23,7 @@ fetch('http://127.0.0.1:8080/api/getcountries.php')
             countryElement.addEventListener("click", function () {
                 
                 getCity(countryElement.id);
-                console.log("triggered");
+                getCountryInfo(countryElement.id);
                 setImageSource(countryElement.id);
 
             });
