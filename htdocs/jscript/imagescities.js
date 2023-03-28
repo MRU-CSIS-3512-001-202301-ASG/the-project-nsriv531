@@ -1,5 +1,5 @@
-export function setCityImageSource(countryISO) {
-    fetch(`http://127.0.0.1:8080/api/imagesfromcountries.php?ISO=${countryISO}`)
+export function setCityImageSource(cityName) {
+    fetch(`http://127.0.0.1:8080/api/imagesfromcities.php?cityName=${cityName}`)
         .then(response => {
             console.log("resp", response);
             return response.json();

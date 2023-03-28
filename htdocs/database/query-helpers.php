@@ -17,6 +17,21 @@ return $db_helper->run($cities, [":country_iso" => $iso])->fetchAll();
 
 }
 
+
+function image_from_cities($db_helper, $cityName) {
+
+    $imageFromCity = <<<QUERY
+
+    SELECT imagedetails.Path FROM imagedetails 
+    INNER JOIN cities ON imagedetails.CityCode = cities.CityCode
+    WHERE cities.AsciiName  = :cityname
+    
+    QUERY;
+
+    return $db_helper->run($imageFromCity, [":cityname" => $cityName])->fetchAll();
+
+}
+
 function countryInformation($db_helper, $iso)
 {
 
@@ -112,6 +127,7 @@ function image_grabber($db_helper, $orderby, $orderASCDESC, $andWHERE, $andClaus
     if ($andWHERE == "default") {
 
         $orderwhereClause = "";
+
     } else if ($andWHERE == "City") {
 
         $orderwhereClause = "AND cities.Asciiname = '$andClause'";

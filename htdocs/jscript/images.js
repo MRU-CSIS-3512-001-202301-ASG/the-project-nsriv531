@@ -11,6 +11,7 @@ export function setImageSource(countryISO) {
             const existingImgElements = fillerDiv.querySelectorAll('img');
             existingImgElements.forEach(img => img.remove());
 
+
             imagePaths.forEach(imagepath => {
                 const pathPara = document.createElement("img");
                 pathPara.src = imageMaker(imagepath);

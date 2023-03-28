@@ -1,3 +1,4 @@
+import {setCityImageSource} from './imagescities.js';
 export function getCity(countryISO) {
     fetch(`http://127.0.0.1:8080/api/getcities.php?countryISO=${countryISO}`)
         .then(response => {
@@ -17,9 +18,9 @@ export function getCity(countryISO) {
                 pathPara.textContent = cities;
                 citiesDiv.appendChild(pathPara);
                 pathPara.addEventListener("click", function () {
-                    
-                    getCityInfo(countryElement.id);
-                    setCityImageSource(countryElement.id);
+
+                    //getCityInfo();
+                    setCityImageSource(pathPara.textContent);
     
                 });
             });

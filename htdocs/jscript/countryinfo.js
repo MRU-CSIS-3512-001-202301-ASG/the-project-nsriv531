@@ -14,7 +14,7 @@ export function getCountryInfo(countryISO) {
   
         infoOnCountrySelected.forEach(info => {
           const pathPara = document.createElement("p");
-          pathPara.textContent = "Country Name: "+ info.CountryName+ ", Area: "+ info.Area + ", Population: "+info.Population+", Capital Name: "+info.Capital+", Currency: "+info.CurrencyName+", Top Level Domain: "+info.TopLevelDomain+", Languages: "+info.Languages+", Neighboring Countries: "+info.Neighbors;          
+          pathPara.textContent = "Country Name: "+ info.CountryName+ ", Area: "+ info.Area + ", Population: "+info.Population+", Capital Name: "+info.Capital+", Currency: "+info.CurrencyName+", Top Level Domain: "+info.TopLevelDomain+", Languages: "+info.Languages+", Neighboring Countries: "+info.Neighbours;          
           const pathCountryDesc = document.createElement("p");
           pathCountryDesc.textContent = "Country Description: "+info.CountryDescription;
           informationDiv.appendChild(pathPara);
