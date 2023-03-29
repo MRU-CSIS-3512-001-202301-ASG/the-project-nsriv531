@@ -13,7 +13,7 @@ $countryname = get_country_names($db_helper, $_GET['countryISO']);
 if ($countryname) {
 
     $data = array(
-        "CountryName" => $countryname
+        "Country_Name" => $countryname
     );
 
     $resp = json_encode($data);

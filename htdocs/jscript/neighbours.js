@@ -6,9 +6,14 @@ export function neighboringCountryParser(Neighboring) {
       })
       .then(data => {
         console.log("data", data); // check the API response
-        const country = data.CountryName.map(CountryName => CountryName.CountryName);
-        console.log(country);
-        return country.CountryName;
+        const countryName = data.Country_Name.map(name => name.CountryName);
+        console.log(countryName);
+        const informationDiv = document.querySelector('.information');
+        const informationElement = document.createElement("p");
+        informationElement.textContent = "Neighboring Countries: "+countryName;
+        console.log("test"+informationElement);
+        informationDiv.append(informationElement);
+
       })
       .catch(error => {
         console.error('There was a problem with the fetch operation:', error);
