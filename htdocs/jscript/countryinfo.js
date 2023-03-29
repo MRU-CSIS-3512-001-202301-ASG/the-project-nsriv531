@@ -1,3 +1,4 @@
+import {neighboringCountryParser} from './neighbours.js';
 export function getCountryInfo(countryISO) {
     fetch(`http://127.0.0.1:8080/api/getcountryinfo.php?countryISO=${countryISO}`)
       .then(response => {
@@ -17,8 +18,11 @@ export function getCountryInfo(countryISO) {
           pathPara.textContent = "Country Name: "+ info.CountryName+ ", Area: "+ info.Area + ", Population: "+info.Population+", Capital Name: "+info.Capital+", Currency: "+info.CurrencyName+", Top Level Domain: "+info.TopLevelDomain+", Languages: "+info.Languages+", Neighboring Countries: "+info.Neighbours;          
           const pathCountryDesc = document.createElement("p");
           pathCountryDesc.textContent = "Country Description: "+info.CountryDescription;
+          const pathCountryNeighbors = document.createElement("p");
+          pathCountryNeighbors.textContent = "Neighboring Countries: "+neighboringCountryParser(info.Neighbours);
           informationDiv.appendChild(pathPara);
           informationDiv.appendChild(pathCountryDesc);
+          informationDiv.appendChild(pathCountryNeighbors);
 
         });
       })

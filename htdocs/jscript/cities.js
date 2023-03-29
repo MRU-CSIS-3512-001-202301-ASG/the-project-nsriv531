@@ -7,7 +7,6 @@ export function getCity(countryISO) {
             return response.json();
         })
         .then(data => {
-
             const listOfCities = data.cities.map(city => city.AsciiName);
             const citiesDiv = document.querySelector('.cityList');
             console.log(listOfCities);

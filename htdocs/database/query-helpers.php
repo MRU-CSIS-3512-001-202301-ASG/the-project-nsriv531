@@ -1,5 +1,18 @@
 <?php
 
+function get_country_names($db_helper, $iso){
+
+    $countryName = <<<QUERY
+
+    SELECT CountryName FROM countries 
+    WHERE countries.ISO = :country_iso
+
+    QUERY;
+
+    return $db_helper->run($countryName, [":country_iso" => $iso])->fetchAll();
+
+}
+
 
 function get_cities($db_helper, $iso)
 {
