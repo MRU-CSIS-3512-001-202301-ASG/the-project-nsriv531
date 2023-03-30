@@ -23,13 +23,13 @@ export function getCountryInfo(countryISO) {
           //pathCountryNeighbors.textContent = "Neighboring Countries: "+neighboringCountryParser(info.Neighbours);
           informationDiv.appendChild(pathPara);
           informationDiv.appendChild(pathCountryDesc);
-          const languages = document.createElement("p");
           let languageArray = info.Languages.split(",");
           const newLanguageArray = [];
           for (let a = 0; a < languageArray.length; a++){
             let newIndex = languageArray[a].substring(0, 2)
             newLanguageArray.push(newIndex);
           }
+          const languages = document.createElement("p");
           languages.textContent = "Languages: ";
           informationDiv.append(languages);
           for (let h = 0; h < newLanguageArray.length; h++){

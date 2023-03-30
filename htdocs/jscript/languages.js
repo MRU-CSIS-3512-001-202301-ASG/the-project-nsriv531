@@ -7,12 +7,12 @@ export function languagesParser(languageiso) {
       .then(data => {
         console.log("data", data); // check the API response
         const languageName = data.language_name.map(language => language.name);
+        console.log(languageName);
         const informationDiv = document.querySelector('.information');
-        const informationElement = document.createElement("p");
-        informationElement.textContent = languageName;
-        console.log("test"+informationElement);
-        informationDiv.append(informationElement);
-
+        const LinformationElement = document.createElement("p");
+        LinformationElement.textContent = languageName;
+        console.log("test"+LinformationElement);
+        informationDiv.append(LinformationElement);
       })
       .catch(error => {
         console.error('There was a problem with the fetch operation:', error);

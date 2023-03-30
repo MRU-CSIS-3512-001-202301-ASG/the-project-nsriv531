@@ -25,7 +25,6 @@ function get_country_names($db_helper, $iso){
 
 }
 
-
 function get_cities($db_helper, $iso)
 {
 
