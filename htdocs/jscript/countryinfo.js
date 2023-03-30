@@ -1,4 +1,5 @@
 import {neighboringCountryParser} from './neighbours.js';
+import {languagesParser} from './languages.js';
 export function getCountryInfo(countryISO) {
     fetch(`http://127.0.0.1:8080/api/getcountryinfo.php?countryISO=${countryISO}`)
       .then(response => {
@@ -22,6 +23,18 @@ export function getCountryInfo(countryISO) {
           //pathCountryNeighbors.textContent = "Neighboring Countries: "+neighboringCountryParser(info.Neighbours);
           informationDiv.appendChild(pathPara);
           informationDiv.appendChild(pathCountryDesc);
+          const languages = document.createElement("p");
+          let languageArray = info.Languages.split(",");
+          const newLanguageArray = [];
+          for (let a = 0; a < languageArray.length; a++){
+            let newIndex = languageArray[a].substring(0, 2)
+            newLanguageArray.push(newIndex);
+          }
+          languages.textContent = "Languages: ";
+          informationDiv.append(languages);
+          for (let h = 0; h < newLanguageArray.length; h++){
+            languagesParser(newLanguageArray[h])          
+          }
           const NeighboringCountryInfo = document.createElement("p");
           NeighboringCountryInfo.textContent="Neighboring Countries: ";
           informationDiv.appendChild(NeighboringCountryInfo);

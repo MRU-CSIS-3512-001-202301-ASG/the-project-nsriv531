@@ -1,5 +1,17 @@
 <?php
 
+function get_language($db_helper, $iso) {
+
+    $language = <<<QUERY
+
+    SELECT name FROM languages
+    WHERE iso = :language_iso
+
+    QUERY;
+
+    return $db_helper->run($language, [":language_iso" => $iso])->fetchAll();
+}
+
 function get_country_names($db_helper, $iso){
 
     $countryName = <<<QUERY
