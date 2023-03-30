@@ -9,9 +9,7 @@ Web 2 is goddamn intimidating but im confidant ill succeed. I really like there.
 
 Week of 2023-01-16
 
-
 Poor vik seems to be having a rough time....too bad it sucks when you see people in need of help, but all you can do is listen and be there on the sidelines...also DAMN, Nate's in a mood too? This is why relationships suck...
-
 
 Continued to work on the login page, made sure the form was properly working, assigned a method to the associated form.
 
@@ -79,4 +77,17 @@ All these git commits keep reminding me of the commitments people have made only
 Each line of code that I write give a tiny little rush of dopamine, which is a nice distraction from the pain I currently feel. I have no idea what grade I will get on this project, all I know is that java script is facinating while mind numingly frustrating. Also, this just occured to me, but how the FUCK did zuckerberg built FB to what it was strictly through PHP??? What a mad lad. 
 
 There's still a lot to do, i was able to get a good amount done on the default view side. First I got to make sure im pulling the right cities...the big man JP says im not doing that right...hiyah....
+
+March 30th
+
+These final four days will be interesting....oh man, there's a big gathering happening with the gang tomorrow, BUT WEB 2 MAN ASDADAFSGFSFFD I GOTTA GET THIS DONEEEE
+
+the languages are at least displaying...time to figure out why the p tags aren't working as they should be. A massive overhaul awaits for this project...
+
+March 31st 
+
+April 1st 
+
+April 2nd 
+
 
