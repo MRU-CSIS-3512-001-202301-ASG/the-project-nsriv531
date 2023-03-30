@@ -10,7 +10,7 @@ export function neighboringCountryParser(Neighboring) {
         console.log(countryName);
         const informationDiv = document.querySelector('.information');
         const informationElement = document.createElement("p");
-        informationElement.textContent = "Neighboring Countries: "+countryName;
+        informationElement.textContent = countryName;
         console.log("test"+informationElement);
         informationDiv.append(informationElement);
 

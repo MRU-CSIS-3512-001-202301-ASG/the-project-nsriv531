@@ -22,8 +22,16 @@ export function getCountryInfo(countryISO) {
           //pathCountryNeighbors.textContent = "Neighboring Countries: "+neighboringCountryParser(info.Neighbours);
           informationDiv.appendChild(pathPara);
           informationDiv.appendChild(pathCountryDesc);
-          neighboringCountryParser(info.Neighbours)          
-          // informationDiv.appendChild(pathCountryNeighbors);
+          const NeighboringCountryInfo = document.createElement("p");
+          NeighboringCountryInfo.textContent="Neighboring Countries: ";
+          informationDiv.appendChild(NeighboringCountryInfo);
+          let myArray = info.Neighbours.split(","); // Split the string at each comma and space
+          for (let i = 0; i < myArray.length; i++) {
+            myArray[i] = myArray[i].trim();
+          }
+          for (let p = 0; p < myArray.length; p++){
+            neighboringCountryParser(myArray[p])          
+          }
         });
       })
       .catch(error => {
