@@ -86,6 +86,8 @@ the languages are at least displaying...time to figure out why the p tags aren't
 
 March 31st 
 
+Okay i prioritized sleep but man...now i feel even more behind...Time to go Mach 10 speed.
+
 April 1st 
 
 April 2nd 
