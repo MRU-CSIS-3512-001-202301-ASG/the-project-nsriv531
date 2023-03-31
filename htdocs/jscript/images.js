@@ -11,13 +11,18 @@ export function setImageSource(countryISO) {
             const imageID = data.imagepath.map(image => image.ImageID)
             const fillerDiv = document.querySelector('.filler');
             const existingImgElements = fillerDiv.querySelectorAll('img');
+            const existingDivElements = fillerDiv.querySelectorAll('div');
+            existingDivElements.forEach(div => div.remove());
             existingImgElements.forEach(img => img.remove());
             imagePaths.forEach((imagepath, index) => { // iterate over both arrays simultaneously using index
+                const divForImage = document.createElement("div")
                 const pathPara = document.createElement("img");
+                divForImage.id = "a"+imageID[index];
                 pathPara.id = imageID[index]; // set the id to the corresponding imageID at the same index
                 pathPara.src = imageMaker(imagepath);
-                fillerDiv.appendChild(pathPara);
-                findImageRating(pathPara.id);
+                divForImage.appendChild(pathPara);
+                findImageRating(pathPara.id, divForImage.id);
+                fillerDiv.appendChild(divForImage);
             });
         })
         .catch(error => {

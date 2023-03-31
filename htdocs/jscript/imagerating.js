@@ -1,5 +1,5 @@
-export function findImageRating(imageid) {
-    console.log(imageid);
+export function findImageRating(imageid, $divid) {
+    console.log("the id is"+$divid);
     fetch(`http://127.0.0.1:8080/api/imageratingcounter.php?imageid=${imageid}`)
         .then(response => {
             console.log("resp", response);
@@ -7,15 +7,22 @@ export function findImageRating(imageid) {
         })
         .then(data => {
             const totalCount = data.total_count;
-            const fillerDiv = document.querySelector('.filler');
+            console.log(totalCount)
+            const thedivForImage = document.querySelector("#"+$divid);
             const ratingElement = document.createElement("p");
             if (totalCount == undefined){
                 ratingElement.textContent = "There are no three star ratings!";
-                fillerDiv.appendChild(ratingElement);
+                thedivForImage.appendChild(ratingElement);
+            }
+            else if (totalCount == 1){
+
+            ratingElement.textContent = "There is "+totalCount+" three star rating!";
+            thedivForImage.appendChild(ratingElement);
             }
             else {
+                
             ratingElement.textContent = "There are "+totalCount+" three star ratings!";
-            fillerDiv.appendChild(ratingElement);
+            thedivForImage.appendChild(ratingElement);
             }
         })
         .catch(error => {
