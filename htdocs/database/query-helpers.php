@@ -1,5 +1,16 @@
 <?php
 
+function imageratingFinder($db_helper, $id) {
+    $rating = <<<QUERY
+
+    SELECT ImageID, rating FROM imagerating 
+    WHERE Rating = 3 AND ImageID = :image_id
+    
+    QUERY;
+
+    return $db_helper->run($rating, [":image_id" => $id])->fetchAll();
+}
+
 function get_language($db_helper, $iso) {
 
     $language = <<<QUERY
@@ -87,7 +98,7 @@ function image_from_countries($db_helper, $iso)
 
     $imagefromCountry = <<<QUERY
 
-    SELECT imagedetails.Path, cities.CountryCodeISO FROM imagedetails 
+    SELECT imagedetails.ImageID, imagedetails.Path, cities.CountryCodeISO FROM imagedetails 
     INNER JOIN cities ON imagedetails.CityCode = cities.CityCode
     WHERE cities.CountryCodeISO = :ISOCode
 
