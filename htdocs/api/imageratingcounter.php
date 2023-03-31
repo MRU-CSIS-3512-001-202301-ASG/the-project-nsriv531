@@ -13,7 +13,8 @@ $imagerating = imageratingFinder($db_helper, $_GET['imageid']);
 
 if ($imagerating) {
 
-    $total_count = count($ddrop);
+    $total_count = count($imagerating);
+    
     $data = array(
         "total_count" => $total_count
     );

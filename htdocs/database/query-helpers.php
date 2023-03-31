@@ -5,7 +5,6 @@ function imageratingFinder($db_helper, $id) {
 
     SELECT ImageID, rating FROM imagerating 
     WHERE Rating = 3 AND ImageID = :image_id
-    
     QUERY;
 
     return $db_helper->run($rating, [":image_id" => $id])->fetchAll();
