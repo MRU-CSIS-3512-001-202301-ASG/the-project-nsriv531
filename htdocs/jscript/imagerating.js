@@ -16,11 +16,10 @@ export function findImageRating(imageid, $divid) {
             }
             else if (totalCount == 1){
 
-            ratingElement.textContent = "There is "+totalCount+" three star rating!";
+            ratingElement.textContent = "There is one three star rating!";
             thedivForImage.appendChild(ratingElement);
             }
             else {
-                
             ratingElement.textContent = "There are "+totalCount+" three star ratings!";
             thedivForImage.appendChild(ratingElement);
             }
