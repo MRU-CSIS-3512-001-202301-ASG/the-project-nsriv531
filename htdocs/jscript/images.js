@@ -1,3 +1,4 @@
+import {findImageRating} from "./imagerating.js";
 export function setImageSource(countryISO) {
     fetch(`http://127.0.0.1:8080/api/imagesfromcountries.php?ISO=${countryISO}`)
         .then(response => {
@@ -5,20 +6,18 @@ export function setImageSource(countryISO) {
             return response.json();
         })
         .then(data => {
+
             const imagePaths = data.imagepath.map(image => image.Path);
             const imageID = data.imagepath.map(image => image.ImageID)
             const fillerDiv = document.querySelector('.filler');
             const existingImgElements = fillerDiv.querySelectorAll('img');
             existingImgElements.forEach(img => img.remove());
-
-
-            imagePaths.forEach(imagepath => {
+            imagePaths.forEach((imagepath, index) => { // iterate over both arrays simultaneously using index
                 const pathPara = document.createElement("img");
-                pathPara.id = imageID;
+                pathPara.id = imageID[index]; // set the id to the corresponding imageID at the same index
                 pathPara.src = imageMaker(imagepath);
                 fillerDiv.appendChild(pathPara);
-                const ratingShowCase = document.createElement("p");
-                ratingShowCase.textContent = 
+                findImageRating(pathPara.id);
             });
         })
         .catch(error => {
