@@ -19,6 +19,12 @@ export function setImageSource(countryISO) {
                 divForImage.id = "a"+imageID[index];
                 pathPara.id = imageID[index]; // set the id to the corresponding imageID at the same index
                 pathPara.src = imageMaker(imagepath);
+                pathPara.addEventListener("click", function () {
+                
+               
+    
+                });
+                
                 divForImage.appendChild(pathPara);
                 findImageRating(pathPara.id, divForImage.id);
                 fillerDiv.appendChild(divForImage);
