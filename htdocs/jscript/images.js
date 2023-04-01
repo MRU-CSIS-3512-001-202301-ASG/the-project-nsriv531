@@ -23,11 +23,11 @@ export function setImageSource(countryISO) {
                 pathPara.addEventListener("click", function () {
                     const copyImg = document.createElement("img");
                     copyImg.src = pathPara.src;
-                    singleDiv.appendChild(copyImg);
-                    if (lastAddedImage) {
-                        lastAddedImage.remove();
+                    if (singleDiv.hasChildNodes()) {
+                    const lastAddedImage = singleDiv.lastChild;
+                    singleDiv.removeChild(lastAddedImage);
                     }
-                    lastAddedImage = copyImg;
+                    singleDiv.appendChild(copyImg);
                 });
                 divForImage.appendChild(pathPara);
                 findImageRating(pathPara.id, divForImage.id);
