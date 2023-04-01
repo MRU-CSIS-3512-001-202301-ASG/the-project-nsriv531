@@ -9,6 +9,7 @@ export function setImageSource(countryISO) {
             const imagePaths = data.imagepath.map(image => image.Path);
             const imageID = data.imagepath.map(image => image.ImageID)
             const fillerDiv = document.querySelector('.filler');
+            const singleDiv = document.querySelector('.single');
             const existingImgElements = fillerDiv.querySelectorAll('img');
             const existingDivElements = fillerDiv.querySelectorAll('div');
             existingDivElements.forEach(div => div.remove());
@@ -20,11 +21,14 @@ export function setImageSource(countryISO) {
                 pathPara.id = imageID[index]; // set the id to the corresponding imageID at the same index
                 pathPara.src = imageMaker(imagepath);
                 pathPara.addEventListener("click", function () {
-                
-               
-    
+                    const copyImg = document.createElement("img");
+                    copyImg.src = pathPara.src;
+                    singleDiv.appendChild(copyImg);
+                    if (lastAddedImage) {
+                        lastAddedImage.remove();
+                    }
+                    lastAddedImage = copyImg;
                 });
-                
                 divForImage.appendChild(pathPara);
                 findImageRating(pathPara.id, divForImage.id);
                 fillerDiv.appendChild(divForImage);
