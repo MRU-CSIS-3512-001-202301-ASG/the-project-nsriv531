@@ -6,7 +6,6 @@ export function setImageSource(countryISO) {
             return response.json();
         })
         .then(data => {
-
             const imagePaths = data.imagepath.map(image => image.Path);
             const imageID = data.imagepath.map(image => image.ImageID)
             const fillerDiv = document.querySelector('.filler');

@@ -22,7 +22,6 @@
     grid-area: filler;
   }
   
-
   .filler {
     min-height: 50px;
     border: 5px outset red;
@@ -30,6 +29,13 @@
     text-align: center;
   }
   
+  .single {
+    min-height: 50px;
+    border: 5px outset red;
+    background-color: lightblue;
+    text-align: center;
+  }
+
   .information {
     min-height: 50px;
     border: 5px outset red;

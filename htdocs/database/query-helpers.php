@@ -1,10 +1,50 @@
 <?php
 
-function imageratingFinder($db_helper, $id) {
+function imageratingFinder1($db_helper, $id) {
+    $rating = <<<QUERY
+
+    SELECT ImageID, rating FROM imagerating 
+    WHERE Rating = 1 AND ImageID = :image_id
+    QUERY;
+
+    return $db_helper->run($rating, [":image_id" => $id])->fetchAll();
+}
+
+function imageratingFinder2($db_helper, $id) {
+    $rating = <<<QUERY
+
+    SELECT ImageID, rating FROM imagerating 
+    WHERE Rating = 2 AND ImageID = :image_id
+    QUERY;
+
+    return $db_helper->run($rating, [":image_id" => $id])->fetchAll();
+}
+
+function imageratingFinder3($db_helper, $id) {
     $rating = <<<QUERY
 
     SELECT ImageID, rating FROM imagerating 
     WHERE Rating = 3 AND ImageID = :image_id
+    QUERY;
+
+    return $db_helper->run($rating, [":image_id" => $id])->fetchAll();
+}
+
+function imageratingFinder4($db_helper, $id) {
+    $rating = <<<QUERY
+
+    SELECT ImageID, rating FROM imagerating 
+    WHERE Rating = 4 AND ImageID = :image_id
+    QUERY;
+
+    return $db_helper->run($rating, [":image_id" => $id])->fetchAll();
+}
+
+function imageratingFinder5($db_helper, $id) {
+    $rating = <<<QUERY
+
+    SELECT ImageID, rating FROM imagerating 
+    WHERE Rating = 5 AND ImageID = :image_id
     QUERY;
 
     return $db_helper->run($rating, [":image_id" => $id])->fetchAll();
@@ -55,7 +95,7 @@ function image_from_cities($db_helper, $cityName) {
 
     $imageFromCity = <<<QUERY
 
-    SELECT imagedetails.Path FROM imagedetails 
+    SELECT imagedetails.ImageID, imagedetails.Path FROM imagedetails 
     INNER JOIN cities ON imagedetails.CityCode = cities.CityCode
     WHERE cities.AsciiName  = :cityname
     

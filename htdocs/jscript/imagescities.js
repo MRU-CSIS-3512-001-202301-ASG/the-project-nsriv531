@@ -1,3 +1,4 @@
+import {findImageRating} from "./imagerating.js";
 export function setCityImageSource(cityName) {
     fetch(`http://127.0.0.1:8080/api/imagesfromcities.php?cityName=${cityName}`)
         .then(response => {
@@ -6,15 +7,25 @@ export function setCityImageSource(cityName) {
         })
         .then(data => {
             const imagePaths = data.imagepath.map(image => image.Path);
+            const imageID = data.imagepath.map(image => image.ImageID);
             const fillerDiv = document.querySelector('.filler');
-
+            const singleDiv = document.querySelector('.single');
             const existingImgElements = fillerDiv.querySelectorAll('img');
+            const existingDivElements = fillerDiv.querySelectorAll('div');
+            existingDivElements.forEach(div => div.remove());
             existingImgElements.forEach(img => img.remove());
-
-            imagePaths.forEach(imagepath => {
+            imagePaths.forEach((imagepath, index) => { // iterate over both arrays simultaneously using index
+                const divForImage = document.createElement("div")
                 const pathPara = document.createElement("img");
+                divForImage.id = "a"+imageID[index];
+                pathPara.id = imageID[index]; // set the id to the corresponding imageID at the same index
                 pathPara.src = imageMaker(imagepath);
-                fillerDiv.appendChild(pathPara);
+                pathPara.addEventListener("click", function () {
+                    singleDiv.append(pathPara);
+                });
+                divForImage.appendChild(pathPara);
+                findImageRating(pathPara.id, divForImage.id);
+                fillerDiv.appendChild(divForImage);
             });
         })
         .catch(error => {
