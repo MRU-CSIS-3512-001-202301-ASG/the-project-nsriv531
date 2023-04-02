@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>The Project - Login Info</title>
+    <link rel="stylesheet" href="root.css" />
     <link rel="stylesheet" href="loginstyle.css" />
 </head>
 

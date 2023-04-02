@@ -57,7 +57,17 @@ export function setCityImageSource(cityName) {
             });
         })
         .catch(error => {
-            console.error('There was a problem with the fetch operation:', error);
+            const fillerDiv = document.querySelector('.filler');
+            existingPElements.forEach(p => p.remove());
+            const existingImgElements = fillerDiv.querySelectorAll('img');
+            const existingDivElements = fillerDiv.querySelectorAll('div');
+            const existingPElements = fillerDiv.querySelectorAll('.noimages');
+            existingDivElements.forEach(div => div.remove());
+            existingImgElements.forEach(img => img.remove());           
+            const noimages = document.createElement("p");
+            noimages.classList.add("noimages");
+            noimages.textContent = "No images available for this city."
+            fillerDiv.appendChild(noimages);
         });
 }
 

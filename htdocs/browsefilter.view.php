@@ -4,6 +4,7 @@ echo <<<HTML
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" href="root.css" />
     <link rel="stylesheet" href="browserfilterstyle.css" />
     <!-- Font Awesome Cdn Link -->
     <title>Browse Filter Page - Dashboard</title>

@@ -1,8 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Alata&display=swap");
+
+:root {
+  --primary-color: #319795;
+  --primary-color-dark: #2d7f7f;
+  --secondary-color: #2d3748;
+  --bg-color: #1a202c;
+  --error-color: #ec2701;
+  --white: #fff;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+*{
+  box-sizing: border-box;
+}
+
 body {
+  background-color: var(--bg-color);
   display:flex;
   flex-direction: row;
   gap:10px;
+  color: var(--white);
   
+}
+
+h1, h2, h3 {
+
+  font-family: "Alata",sans-serif;
+
 }
   #wrapper{
 
@@ -15,29 +39,42 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     min-height: 50px;
-    border: 5px outset red;
-    background-color: lightblue;
+    /*border: 5px outset red;*/
+    /* background-color: lightblue; */
     text-align: center;
-  }
-  
-  .single {
-    min-height: 50px;
-    border: 5px outset red;
-    background-color: lightblue;
-    text-align: center;
+    background-color: var(--secondary-color);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 var(--shadow-color);
   }
 
-  .information {
-    min-height: 50px;
-    border: 5px outset red;
-    background-color: lightblue;
-    text-align: center;
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid var(--bg-color);
+    background-color: var(--bg-color);
+    border-radius: 5px;
+    outline: none;
+    font-size: 1.2rem;
+    font-family: monospace;
+    transition: 0.3s;
+    color: var(--white);
   }
-  
+
+
   .cityList {
+
+    min-width: 300px;
+
+  }
+
+  .cityList, .information, .single {
     min-height: 50px;
-    border: 5px outset red;
-    background-color: lightblue;
+    background-color: var(--secondary-color);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 var(--shadow-color);
     text-align: center;
   }
 
@@ -52,11 +89,34 @@ button {
 }
 
 #countrydiv {
-    border: 5px outset red;
-    background-color: lightblue;
+    overflow: auto;
     text-align: center;
-    width: 400px;
+    min-width: 300px;
+    background-color: var(--secondary-color);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 var(--shadow-color);
 
+}
+
+#countrydiv p, .cityList p {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--white);
+  background-color: var(--primary-color);
+  font-family: sans-serif;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#countrydiv p:hover, .cityList p:hover {
+  
+  background-color: var(--primary-color-dark);
+  cursor: pointer;
+  
 }
 
 button:hover {
