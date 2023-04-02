@@ -8,15 +8,15 @@ require '../database/query-helpers.php';
 
 $db_helper = new DatabaseHelper($config);
 
-$cityInfo = cityInformation($db_helper, $_GET["citycode"]);
+$imageRatingSingle = image_rating_single_view($db_helper, $_GET['imageid']);
 
-if ($cityInfo) {
+if ($imageRatingSingle) {
+
     $data = array(
-        "Information" => $cityInfo    
+        "Rating_Info:" => $imageRatingSingle
     );
-    
-    $resp = json_encode($data);
 
+    $resp = json_encode($data);
 } else {
 
     $resp = json_encode([]);

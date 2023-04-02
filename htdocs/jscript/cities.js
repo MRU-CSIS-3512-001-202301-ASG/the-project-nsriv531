@@ -23,6 +23,7 @@ export function getCity(countryISO) {
                 const pathPara = document.createElement("p");
                 pathPara.textContent = cities;
                 pathPara.id = cityCodes[index];
+                console.log("city id is"+pathPara.id);
                 citiesDiv.appendChild(pathPara);
                 pathPara.addEventListener("click", function () {
                     filler.show();

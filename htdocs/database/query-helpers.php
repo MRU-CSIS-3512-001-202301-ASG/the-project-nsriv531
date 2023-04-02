@@ -1,5 +1,4 @@
 <?php
-
 function image_info($db_helper, $id){
 
     $imageinfo = <<<QUERY
@@ -17,9 +16,25 @@ function image_info($db_helper, $id){
     INNER JOIN cities ON imagedetails.CityCode = cities.CityCode
     INNER JOIN countries ON imagedetails.CountryCodeISO = countries.ISO
     WHERE imagedetails.ImageID = :image_id
+
     QUERY;
 
     return $db_helper->run($imageinfo, [":image_id" => $id])->fetchAll();
+
+}
+
+function image_rating_single_view($db_helper, $imageratingsingle) {
+
+    $imageratingSingleView = <<<QUERY
+
+    SELECT Rating, FirstName, LastName from imagerating 
+    INNER JOIN users 
+    on imagerating.UserID = users.UserID
+    WHERE ImageID = :image_id
+    ORDER BY Rating DESC 
+    QUERY;
+
+    return $db_helper->run($imageratingSingleView, [":image_id"=>$imageratingsingle])->fetchAll();
 
 }
 
@@ -103,7 +118,7 @@ function get_cities($db_helper, $iso)
 
     $cities = <<<QUERY
 
-    SELECT DISTINCT AsciiName, cities.CityCode FROM cities 
+    SELECT DISTINCT AsciiName, CityCode FROM cities 
     WHERE CountryCodeISO = :country_iso
     ORDER BY cities.AsciiName 
 
@@ -121,7 +136,6 @@ function image_from_cities($db_helper, $cityName) {
     SELECT imagedetails.ImageID, imagedetails.Path FROM imagedetails 
     INNER JOIN cities ON imagedetails.CityCode = cities.CityCode
     WHERE cities.AsciiName  = :cityname
-    
     QUERY;
 
     return $db_helper->run($imageFromCity, [":cityname" => $cityName])->fetchAll();
@@ -146,9 +160,10 @@ function countryInformation($db_helper, $iso)
 function cityInformation($db_helper, $citycode) {
 
     $cityInfo = <<<QUERY
+
     SELECT AsciiName, Population, Elevation, TimeZone 
     FROM cities
-    WHERE CityCode = :city_code
+    WHERE citycode = :city_code
     QUERY;
     
     return $db_helper->run($cityInfo, [":city_code" => $citycode])->fetchAll();
@@ -168,6 +183,8 @@ function image_from_countries($db_helper, $iso)
 
     return $db_helper->run($imagefromCountry, [":ISOCode" => $iso])->fetchAll();
 }
+
+
 
 function get_countries($db_helper)
 {

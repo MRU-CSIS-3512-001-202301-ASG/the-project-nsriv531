@@ -1,4 +1,5 @@
 import {findImageInformation} from "./imageinformation.js";
+import {findImageRatingWithUsers} from './imageratingfromuser.js';
 import {findImageRating} from "./imagerating.js";
 import { fillerDiv } from './fillerDiv.js';
 import { singleDiv } from './singleDiv.js';
@@ -35,12 +36,12 @@ export function setCityImageSource(cityName) {
                       if (existingButtonElement) {
                         existingButtonElement.remove();
                       }
-                    
                     const copyImg = document.createElement("img");
                     copyImg.src = pathPara.src;
                     copyImg.id = pathPara.id;
                     singleDiv.appendChild(copyImg);
                     findImageInformation(copyImg.id);
+                    findImageRatingWithUsers(copyImg.id);
                     const toggleButton = document.createElement("button");
                     toggleButton.textContent = "Back to Default View";
                     toggleButton.addEventListener("click", function() {
