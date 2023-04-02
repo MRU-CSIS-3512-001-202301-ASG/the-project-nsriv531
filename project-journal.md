@@ -90,6 +90,13 @@ Okay i prioritized sleep but man...now i feel even more behind...Time to go Mach
 
 April 1st 
 
+I ended up going out on that get together. Not as many people as i thought it would be..it was really nice catching up with vik and
+finally having an authentic conversation with her. Didn't see nate. Think nate is still being petty with me but meh. not much i can do about that. It was really nice to just enjoy viks company. i can tell she enjoyed mine.
+
+Vik asked me despite all the stress that web 2 is giving me..am i enjoying myself? Do i like what im doing? (good question tbh)
+
+And if im being honest. Yeah. I'm probably not going to get an A on this project. But the more i actually take the time to check of these boxes, the more i start to see just how right i was in picking this degree. This project really pushed a lot out of me. and im glad I had the trek that I did.
+
 April 2nd 
 
 
