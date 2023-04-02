@@ -22,13 +22,18 @@ export function setImageSource(countryISO) {
                 pathPara.id = imageID[index]; // set the id to the corresponding imageID at the same index
                 pathPara.src = imageMaker(imagepath);
                 pathPara.addEventListener("click", function () {
+                    const existingImgElement = singleDiv.querySelector('img');
+                    if (existingImgElement) {
+                        // Remove the existing image element from the div
+                        existingImgElement.remove();
+                      }
                     const copyImg = document.createElement("img");
                     copyImg.src = pathPara.src;
                     copyImg.id = pathPara.id;
-                    if (singleDiv.hasChildNodes()) {
-                    const lastAddedImage = singleDiv.lastChild;
-                    singleDiv.removeChild(lastAddedImage);
-                    }
+                    // if (singleDiv.hasChildNodes()) {
+                    //     const lastAddedImage = singleDiv.lastChild;
+                    //     singleDiv.removeChild(lastAddedImage);
+                    // }
                     singleDiv.appendChild(copyImg);
                     findImageInformation(copyImg.id);
                 });

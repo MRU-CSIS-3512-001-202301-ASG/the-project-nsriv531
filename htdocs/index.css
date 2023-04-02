@@ -12,8 +12,8 @@ body {
   }
 
   .filler {
-    display:grid;
-    grid-template-columns: 1fr 1fr;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     min-height: 50px;
     border: 5px outset red;
     background-color: lightblue;
