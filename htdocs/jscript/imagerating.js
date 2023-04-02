@@ -26,6 +26,7 @@ export function findImageRating(imageid, $divid) {
             }
             else if (totalCount1 == 1){
 
+                
                 ratingElement1.textContent = "There is one one star rating!";
             thedivForImage.appendChild(ratingElement1);
             }

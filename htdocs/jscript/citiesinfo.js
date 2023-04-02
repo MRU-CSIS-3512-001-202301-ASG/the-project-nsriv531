@@ -1,5 +1,4 @@
 export function getCityInfo(cityCode) {
-  console.log(cityCode+"sdfsdf");
     fetch(`http://127.0.0.1:8080/api/getcityinfo.php?citycode=${cityCode}`)
       .then(response => {
         console.log("resp", response);

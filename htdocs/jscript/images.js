@@ -3,6 +3,7 @@ import {findImageInformation} from "./imageinformation.js";
 import {findImageRatingWithUsers} from './imageratingfromuser.js';
 import { fillerDiv } from './fillerDiv.js';
 import { singleDiv } from './singleDiv.js';
+
 const filler = new fillerDiv();
 const single = new singleDiv();
 export function setImageSource(countryISO) {
