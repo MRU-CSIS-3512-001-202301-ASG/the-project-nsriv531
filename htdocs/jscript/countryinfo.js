@@ -18,7 +18,7 @@ export function getCountryInfo(countryISO) {
           const pathPara = document.createElement("p");
           pathPara.textContent = "Country Name: "+ info.CountryName+ ", Area: "+ info.Area + ", Population: "+info.Population+", Capital Name: "+info.Capital+", Currency: "+info.CurrencyName+", Top Level Domain: "+info.TopLevelDomain;          
           const pathCountryDesc = document.createElement("p");
-          pathCountryDesc.textContent = "Country Description: "+info.CountryDescription;
+          pathCountryDesc.textContent = info.CountryDescription;
           informationDiv.appendChild(pathPara);
           informationDiv.appendChild(pathCountryDesc);
           

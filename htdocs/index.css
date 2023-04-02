@@ -23,17 +23,28 @@ body {
   
 }
 
+h1 {
+  font-size: 2.5em;
+}
+
 h1, h2, h3 {
 
   font-family: "Alata",sans-serif;
 
 }
   #wrapper{
-
+    font-family: sans-serif;
+    gap:10px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
   }
+
+  /* .stickyheader{
+    position: fixed;
+    background-color: var(--secondary-color);
+    top:0;
+  } */
 
   .filler {
     display: grid;
@@ -46,7 +57,14 @@ h1, h2, h3 {
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 0 10px 0 var(--shadow-color);
+    
   }
+
+  .filler h1 {
+    grid-column: -1/1;
+
+  }
+
 
   input {
     width: 100%;
@@ -64,11 +82,22 @@ h1, h2, h3 {
 
 
   .cityList {
-
+    overflow: auto;
     min-width: 300px;
+    height: 100vh;
 
   }
 
+
+  .information {
+    text-align: left;
+
+  }
+
+  .single {
+    position: relative;
+
+  }
   .cityList, .information, .single {
     min-height: 50px;
     background-color: var(--secondary-color);
@@ -79,16 +108,21 @@ h1, h2, h3 {
   }
 
 button {
-    background-color: #20e15a;
+    background-color: var(--primary-color);
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 5%;
+    position: absolute;
+    top:0;
+    left:8px;
+    width: 200px;
+    border-radius: 4px;
 }
 
 #countrydiv {
+    height: 100vh;
     overflow: auto;
     text-align: center;
     min-width: 300px;

@@ -7,7 +7,6 @@ export class fillerDiv {
     }
   
     show() {
-    console.log("triggered");
-      this.fillerDiv.style.display = "block";
+      this.fillerDiv.style.display = "grid";
     }
   }

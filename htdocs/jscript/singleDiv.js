@@ -7,7 +7,6 @@ export class singleDiv {
     }
   
     show() {
-    console.log("triggered");
       this.singleDiv.style.display = "block";
     }
   }

@@ -31,6 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === "GET") {
             header("Location: browsefilter.php");
         } else {
 
+            
             $passwordforgot = "Username or password is incorrect!";
 
             require 'adminview.php';
