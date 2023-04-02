@@ -97,6 +97,11 @@ Vik asked me despite all the stress that web 2 is giving me..am i enjoying mysel
 
 And if im being honest. Yeah. I'm probably not going to get an A on this project. But the more i actually take the time to check of these boxes, the more i start to see just how right i was in picking this degree. This project really pushed a lot out of me. and im glad I had the trek that I did.
 
+BTw, im writing this as i wait outside a bar connected to my laptop via hotspot...yeah i decided to drink again tonight with my bois in robotics...not a good idea ;-;
+
+Today is going to be a long night..
+
+
 April 2nd 
 
 

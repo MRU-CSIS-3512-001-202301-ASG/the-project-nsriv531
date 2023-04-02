@@ -1,4 +1,9 @@
+import {findImageInformation} from "./imageinformation.js";
 import {findImageRating} from "./imagerating.js";
+import { fillerDiv } from './fillerDiv.js';
+import { singleDiv } from './singleDiv.js';
+const filler = new fillerDiv();
+const single = new singleDiv();
 export function setCityImageSource(cityName) {
     fetch(`http://127.0.0.1:8080/api/imagesfromcities.php?cityName=${cityName}`)
         .then(response => {
@@ -21,7 +26,29 @@ export function setCityImageSource(cityName) {
                 pathPara.id = imageID[index]; // set the id to the corresponding imageID at the same index
                 pathPara.src = imageMaker(imagepath);
                 pathPara.addEventListener("click", function () {
-                    singleDiv.append(pathPara);
+                    fillerDiv.style.display = "none"; // add this line to toggle visibility off
+                    const existingImgElement = singleDiv.querySelector('img');
+                    const existingButtonElement = singleDiv.querySelector('button');
+                    if (existingImgElement) {
+                        existingImgElement.remove();
+                      }
+                      if (existingButtonElement) {
+                        existingButtonElement.remove();
+                      }
+                    
+                    const copyImg = document.createElement("img");
+                    copyImg.src = pathPara.src;
+                    copyImg.id = pathPara.id;
+                    singleDiv.appendChild(copyImg);
+                    findImageInformation(copyImg.id);
+                    const toggleButton = document.createElement("button");
+                    toggleButton.textContent = "Back to Default View";
+                    toggleButton.addEventListener("click", function() {
+                        filler.show();
+                        single.hide();
+                    });
+                    singleDiv.appendChild(toggleButton);    
+                    single.show();
                 });
                 divForImage.appendChild(pathPara);
                 findImageRating(pathPara.id, divForImage.id);

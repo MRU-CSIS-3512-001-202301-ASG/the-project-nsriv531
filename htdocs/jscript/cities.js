@@ -1,5 +1,10 @@
 import {setCityImageSource} from './imagescities.js';
 import {getCityInfo} from './citiesinfo.js';
+import { fillerDiv } from './fillerDiv.js';
+import { singleDiv } from './singleDiv.js';
+const filler = new fillerDiv();
+const single = new singleDiv();
+
 export function getCity(countryISO) {
     fetch(`http://127.0.0.1:8080/api/getcities.php?countryISO=${countryISO}`)
         .then(response => {
@@ -20,6 +25,8 @@ export function getCity(countryISO) {
                 pathPara.id = cityCodes[index];
                 citiesDiv.appendChild(pathPara);
                 pathPara.addEventListener("click", function () {
+                    filler.show();
+                    single.hide();
                     getCityInfo(pathPara.id);
                     setCityImageSource(pathPara.textContent);
     

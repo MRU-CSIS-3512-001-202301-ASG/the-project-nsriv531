@@ -1,9 +1,13 @@
 import { setImageSource } from './images.js';
 import {getCity} from './cities.js';
 import {getCountryInfo} from './countryinfo.js';
+import { fillerDiv } from './fillerDiv.js';
+import { singleDiv } from './singleDiv.js';
+const filler = new fillerDiv();
+const thesingle = new singleDiv();
 
 const countryDiv = document.getElementById("countrydiv");
-const fillerDiv = document.getElementsByClassName("filler");
+
 
 fetch('http://127.0.0.1:8080/api/getcountries.php')
     .then(response => {
@@ -21,7 +25,8 @@ fetch('http://127.0.0.1:8080/api/getcountries.php')
             countryElement.id = countryISO;
             countryDiv.appendChild(countryElement);
             countryElement.addEventListener("click", function () {
-                
+                filler.show();
+                thesingle.hide();
                 getCity(countryElement.id);
                 getCountryInfo(countryElement.id);
                 setImageSource(countryElement.id);
