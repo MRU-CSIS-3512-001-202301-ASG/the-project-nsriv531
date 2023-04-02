@@ -8,7 +8,7 @@ require '../database/query-helpers.php';
 
 $db_helper = new DatabaseHelper($config);
 
-$cityInfo = cityInformation($db_helper, $_GET["cityName"]);
+$cityInfo = cityInformation($db_helper, $_GET["citycode"]);
 
 if ($cityInfo) {
     $data = array(

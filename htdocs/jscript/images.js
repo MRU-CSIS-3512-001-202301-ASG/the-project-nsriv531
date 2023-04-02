@@ -24,16 +24,11 @@ export function setImageSource(countryISO) {
                 pathPara.addEventListener("click", function () {
                     const existingImgElement = singleDiv.querySelector('img');
                     if (existingImgElement) {
-                        // Remove the existing image element from the div
                         existingImgElement.remove();
                       }
                     const copyImg = document.createElement("img");
                     copyImg.src = pathPara.src;
                     copyImg.id = pathPara.id;
-                    // if (singleDiv.hasChildNodes()) {
-                    //     const lastAddedImage = singleDiv.lastChild;
-                    //     singleDiv.removeChild(lastAddedImage);
-                    // }
                     singleDiv.appendChild(copyImg);
                     findImageInformation(copyImg.id);
                 });

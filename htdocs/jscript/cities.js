@@ -8,18 +8,19 @@ export function getCity(countryISO) {
         })
         .then(data => {
             const listOfCities = data.cities.map(city => city.AsciiName);
+            const cityCodes = data.cities.map(city=>city.CityCode);
             const citiesDiv = document.querySelector('.cityList');
             console.log(listOfCities);
             const existingPElements = citiesDiv.querySelectorAll('p');
             existingPElements.forEach(p => p.remove());
 
-            listOfCities.forEach(cities => {
+            listOfCities.forEach((cities, index) => {
                 const pathPara = document.createElement("p");
                 pathPara.textContent = cities;
+                pathPara.id = cityCodes[index];
                 citiesDiv.appendChild(pathPara);
                 pathPara.addEventListener("click", function () {
-
-                    getCityInfo(pathPara.textContent);
+                    getCityInfo(pathPara.id);
                     setCityImageSource(pathPara.textContent);
     
                 });
