@@ -13,12 +13,12 @@
             <h1>COMP3512 - The Project</h1>
             <h2>Login Page</h2>
             <div class="input">
-                <input type="text" title="username" name="username" placeholder="enter username" value=<?php echo isset($_POST['username']) ? $_POST['username'] : ''; ?>/>
+                <input type="text" title="username" name="username" placeholder="enter username" value=<?php echo isset($_POST['username']) ? $_POST['username'] : ''; ?>>
                 <br />
-                <input type="password" title="username" name="password" placeholder="enter password" value=<?php echo isset($_POST['password']) ? $_POST['password'] : ''; ?>/>
+                <input type="password" title="username" name="password" placeholder="enter password" value=<?php echo isset($_POST['password']) ? $_POST['password'] : ''; ?>>
                 <br />
                 <button type="submit" class="btn">Login</button>
-                <p> <? $passwordforgot ?> </p>
+                <p> <?= $passwordforgot ?> </p>
                 <a class="forgot" href="#">Forgot Username?</a>
             </div>
         </form>
