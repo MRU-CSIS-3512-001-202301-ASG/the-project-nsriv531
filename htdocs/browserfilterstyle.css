@@ -1,15 +1,3 @@
-button {
-    background-color: #ffa705;
-    color: white;
-    padding: 14px 20px;
-    border: 2px solid #4CAF50;
-    margin: 8px 0;
-    cursor: pointer;
-    height: 50px;
-    width: 5%;
-    float: right;
-}
-
 button:hover {
 
     background-color: rgb(227, 227, 63);
@@ -24,31 +12,58 @@ button:active {
 
 }
 
+.ascdesc {
+    background-color: #6a552f;
+    color: rgb(47, 9, 9);
+    padding: 20px 20px;
+    border: 2px solid #4CAF50;
+    margin: 25px 0;
+    cursor: pointer;
+    height: 60px;
+    width: 35%;
+
+}
+
+
+.changerating{
+    background-color: #6a552f;
+    color: rgb(47, 9, 9);
+    padding: 20px 20px;
+    border: 2px solid #4CAF50;
+    margin: 10px 0;
+    cursor: pointer;
+    height: 60px;
+    width: 10%;
+    float:right;
+
+}
+
 .btnsearch {
-
     background-color: #6a552f;
     color: rgb(47, 9, 9);
-    padding: 14px 20px;
+    padding: 20px 20px;
     border: 2px solid #4CAF50;
-    margin: 8px 0;
+    margin: 10px 0;
     cursor: pointer;
-    height: 45px;
-    width: 20%;
+    height: 60px;
+    width: 30%;
+    float:right;
 
 }
 
-.btn {
-
+.logout {
     background-color: #6a552f;
     color: rgb(47, 9, 9);
-    padding: 14px 20px;
+    padding: 20px 20px;
     border: 2px solid #4CAF50;
-    margin: 8px 0;
+    margin: 10px 0;
     cursor: pointer;
-    height: 45px;
-    width: 80%;
+    height: 60px;
+    width: 4%;
+    float:right;
 
 }
+
 
 .btn:hover {
 

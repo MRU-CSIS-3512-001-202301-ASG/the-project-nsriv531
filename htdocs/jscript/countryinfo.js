@@ -35,9 +35,9 @@ export function getCountryInfo(countryISO) {
           for (let h = 0; h < newLanguageArray.length; h++){
             languagesParser(newLanguageArray[h])          
           }
-          const NeighboringCountryInfo = document.createElement("p");
-          NeighboringCountryInfo.textContent="Neighboring Countries: ";
-          informationDiv.appendChild(NeighboringCountryInfo);
+          //const NeighboringCountryInfo = document.createElement("p");
+          //NeighboringCountryInfo.textContent="Neighboring Countries: ";
+          //informationDiv.appendChild(NeighboringCountryInfo);
           let myArray = info.Neighbours.split(","); // Split the string at each comma and space
           for (let i = 0; i < myArray.length; i++) {
             myArray[i] = myArray[i].trim();

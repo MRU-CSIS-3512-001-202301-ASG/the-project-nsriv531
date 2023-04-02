@@ -10,7 +10,7 @@ export function languagesParser(languageiso) {
         console.log(languageName);
         const informationDiv = document.querySelector('.information');
         const LinformationElement = document.createElement("p");
-        LinformationElement.textContent = languageName;
+        LinformationElement.textContent = "Language: "+languageName;
         console.log("test"+LinformationElement);
         informationDiv.append(LinformationElement);
       })

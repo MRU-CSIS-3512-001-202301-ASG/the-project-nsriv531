@@ -9,7 +9,7 @@ function image_info($db_helper, $id){
     cities.AsciiName, 
     userslogin.UserName, 
     countries.CountryName, 
-    countries.CountryDescription  
+    imagedetails.Description  
     from imagedetails 
     INNER JOIN userslogin 
     ON imagedetails.UserID = userslogin.UserID

@@ -13,7 +13,7 @@
 
     <?php
     echo "<form method='get'>";
-    echo "<button type='submit' class = 'btnsearch'name='logoutbutton'>Logout</button>";
+    echo "<button type='submit' class = 'logout' name='logoutbutton'>Logout</button>";
     echo "<table>
     <tr>
     <td> <input type='radio' id='cityradiobutton' name='cityradiobutton' value=''><label for='contactChoice1'>City</label></td>
@@ -29,7 +29,7 @@
     echo "<form method='get'>";
     echo "<tr>
     <td>
-    <button type='submit' class='btnsearch' name='submitbutton'>Change Rating</button>
+    <button type='submit' class='changerating' name='submitbutton'>Change Rating</button>
     </td>
     </tr>";
     echo "<table>";
@@ -45,11 +45,11 @@
     echo "<tr>
     <td></td>
     <td></td>
-    <td><button type='submit' class='btnsearch' name='citybutton'>ASC/DESC</button></td>
+    <td><button type='submit' class='ascdesc' name='citybutton'>ASC/DESC</button></td>
     <td></td>
     <td></td>
     <td></td>
-    <td><button type='submit' class='btnsearch' name='ratingbutton'>ASC/DESC</button></td>";
+    <td><button type='submit' class='ascdesc' name='ratingbutton'>ASC/DESC</button></td>";
     echo "</tr>";
     foreach ($queryResult as $value) {
         echo "<tr><td>" . $value["ImageID"] . " </td>" .

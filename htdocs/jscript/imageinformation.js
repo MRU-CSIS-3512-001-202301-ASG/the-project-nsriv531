@@ -11,7 +11,7 @@ export function findImageInformation(imageid) {
         existingPElements.forEach(p => p.remove());
         infoOnImageSelected.forEach(info => {
         const pathPara = document.createElement("p");
-        pathPara.textContent = "City Name: "+ info.AsciiName+ ", Country Name: "+info.CountryName + ", Country Description: "+info.CountryDescription+ ", Title: "+ info.Title + ", Latitude: "+info.Latitude+", Longitude: "+info.Longitude+", Username: "+info.UserName;          
+        pathPara.textContent = "City Name: "+ info.AsciiName+ ", Country Name: "+info.CountryName + ", Image Description: "+info.Description+ ", Title: "+ info.Title + ", Latitude: "+info.Latitude+", Longitude: "+info.Longitude+", Username: "+info.UserName;          
         singleDiv.appendChild(pathPara);
         });
       })

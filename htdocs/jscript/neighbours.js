@@ -9,10 +9,10 @@ export function neighboringCountryParser(Neighboring) {
         const countryName = data.Country_Name.map(name => name.CountryName);
         console.log(countryName);
         const informationDiv = document.querySelector('.information');
-        const informationElement = document.createElement("p");
-        informationElement.textContent = countryName;
-        console.log("test"+informationElement);
-        informationDiv.append(informationElement);
+        const theinformationElement = document.createElement("p");
+        theinformationElement.textContent = "Neighboring Country: "+countryName;
+        console.log("test"+theinformationElement);
+        informationDiv.append(theinformationElement);
 
       })
       .catch(error => {

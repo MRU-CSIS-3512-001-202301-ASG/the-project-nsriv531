@@ -14,6 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === "GET") {
     $passwordforgot = "";
 
     require 'adminview.php';
+
 } else if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
     if (isset($_POST["username"]) && isset($_POST["password"])) {
@@ -23,6 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] === "GET") {
 
         $accountResults = user_authentication($db_helper);
 
+        
+
         if ($username == $accountResults['username'] && password_verify($password, $accountResults['password'])) {
 
             $_SESSION["loginkey"] = true;
@@ -30,10 +33,21 @@ if ($_SERVER['REQUEST_METHOD'] === "GET") {
             header("Location: browsefilter.php");
         } else {
 
+            // $passwordforgot = "Username or password is incorrect!";
 
+            // $password = $_POST["password"];
+            // $options = [
+            //     'cost' => 12,
+            // ];
+
+            // $hashed_password = password_hash($password, PASSWORD_BCRYPT, $options);
+
+            // echo $hashed_password;
+
+
+            
             require 'adminview.php';
 
-            $passwordforgot = "Username or password is incorrect!";
         }
     }
 }
