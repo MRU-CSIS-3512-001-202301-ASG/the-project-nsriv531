@@ -33,17 +33,6 @@ if ($_SERVER['REQUEST_METHOD'] === "GET") {
 
             $passwordforgot = "Username or password is incorrect!";
 
-            // $password = $_POST["password"];
-            // $options = [
-            //     'cost' => 12,
-            // ];
-
-            // $hashed_password = password_hash($password, PASSWORD_BCRYPT, $options);
-
-            // echo $hashed_password;
-
-
-
             require 'adminview.php';
 
         }

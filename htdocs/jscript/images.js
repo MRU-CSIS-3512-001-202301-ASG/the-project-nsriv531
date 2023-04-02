@@ -13,12 +13,15 @@ export function setImageSource(countryISO) {
             return response.json();
         })
         .then(data => {
+            console.log(data);
             const imagePaths = data.imagepath.map(image => image.Path);
-            const imageID = data.imagepath.map(image => image.ImageID)
+            const imageID = data.imagepath.map(image => image.ImageID);
             const fillerDiv = document.querySelector('.filler');
             const singleDiv = document.querySelector('.single');
             const existingImgElements = fillerDiv.querySelectorAll('img');
             const existingDivElements = fillerDiv.querySelectorAll('div');
+            const existingPElements = fillerDiv.querySelectorAll('.noimages');
+            existingPElements.forEach(p => p.remove());          
             existingDivElements.forEach(div => div.remove());
             existingImgElements.forEach(img => img.remove());
             imagePaths.forEach((imagepath, index) => { // iterate over both arrays simultaneously using index
@@ -60,7 +63,18 @@ export function setImageSource(countryISO) {
             });
         })
         .catch(error => {
-            console.error('There was a problem with the fetch operation:', error);
+            console.log("test");
+            const fillerDiv = document.querySelector('.filler');
+            existingPElements.forEach(p => p.remove());
+            const existingImgElements = fillerDiv.querySelectorAll('img');
+            const existingDivElements = fillerDiv.querySelectorAll('div');
+            const existingPElements = fillerDiv.querySelectorAll('.noimages');
+            existingDivElements.forEach(div => div.remove());
+            existingImgElements.forEach(img => img.remove());           
+            const noimages = document.createElement("p");
+            noimages.classList.add("noimages");
+            noimages.textContent = "No images available for this country."
+            fillerDiv.appendChild(noimages);
         });
 }
 

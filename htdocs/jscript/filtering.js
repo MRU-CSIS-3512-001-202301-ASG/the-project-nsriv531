@@ -27,7 +27,6 @@ function filterCountries() {
     }
   });
 }
-
 function filterCities() {
   const filter = citySearchBox.value.toUpperCase();
   const pTags = cityDiv.querySelectorAll('p');

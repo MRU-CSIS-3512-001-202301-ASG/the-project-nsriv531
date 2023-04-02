@@ -101,7 +101,6 @@ BTw, im writing this as i wait outside a bar connected to my laptop via hotspot.
 
 Today is going to be a long night..
 
-
 April 2nd 
 
 
