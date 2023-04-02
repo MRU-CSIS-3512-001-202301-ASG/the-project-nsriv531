@@ -1,4 +1,5 @@
 import {findImageRating} from "./imagerating.js";
+import {findImageInformation} from "./imageinformation.js";
 export function setImageSource(countryISO) {
     fetch(`http://127.0.0.1:8080/api/imagesfromcountries.php?ISO=${countryISO}`)
         .then(response => {
@@ -23,11 +24,13 @@ export function setImageSource(countryISO) {
                 pathPara.addEventListener("click", function () {
                     const copyImg = document.createElement("img");
                     copyImg.src = pathPara.src;
+                    copyImg.id = pathPara.id;
                     if (singleDiv.hasChildNodes()) {
                     const lastAddedImage = singleDiv.lastChild;
                     singleDiv.removeChild(lastAddedImage);
                     }
                     singleDiv.appendChild(copyImg);
+                    findImageInformation(copyImg.id);
                 });
                 divForImage.appendChild(pathPara);
                 findImageRating(pathPara.id, divForImage.id);

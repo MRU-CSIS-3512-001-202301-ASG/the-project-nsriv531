@@ -1,5 +1,28 @@
 <?php
 
+function image_info($db_helper, $id){
+
+    $imageinfo = <<<QUERY
+    SELECT imagedetails.ImageID, 
+    imagedetails.Title, 
+    imagedetails.Latitude, 
+    imagedetails.Longitude, 
+    cities.AsciiName, 
+    userslogin.UserName, 
+    countries.CountryName, 
+    countries.CountryDescription  
+    from imagedetails 
+    INNER JOIN userslogin 
+    ON imagedetails.UserID = userslogin.UserID
+    INNER JOIN cities ON imagedetails.CityCode = cities.CityCode
+    INNER JOIN countries ON imagedetails.CountryCodeISO = countries.ISO
+    WHERE imagedetails.ImageID = :image_id
+    QUERY;
+
+    return $db_helper->run($imageinfo, [":image_id" => $id])->fetchAll();
+
+}
+
 function imageratingFinder1($db_helper, $id) {
     $rating = <<<QUERY
 

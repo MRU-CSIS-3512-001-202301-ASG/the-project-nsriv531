@@ -1,28 +1,19 @@
-#page {
-    display: grid;
+body {
+  display:flex;
+  flex-direction: row;
+  gap:10px;
+  
+}
+  #wrapper{
 
-    grid-template-areas:
-    "countrynames  cityList"
-    "countrynames information"
-    "countrynames filler";
-  grid-template-rows: 50px 1fr 30px;
-  grid-template-columns: 150px 2fr;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
 
-  }
-  
-  #page > .cityList {
-    grid-area: cityList;
-  }
-  
-  #page > .information {
-    grid-area: information;
-  }
-  
-  #page > .filler {
-    grid-area: filler;
-  }
-  
   .filler {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
     min-height: 50px;
     border: 5px outset red;
     background-color: lightblue;
@@ -64,6 +55,8 @@ button {
     border: 5px outset red;
     background-color: lightblue;
     text-align: center;
+    width: 400px;
+
 }
 
 button:hover {
