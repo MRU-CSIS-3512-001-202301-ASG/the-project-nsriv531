@@ -30,17 +30,17 @@ if (!isset($_SESSION["loginkey"])) {
         unset($_COOKIE['ratingcookie']);
         $orderby = "City";
         $orderASCDESC = "ASC";
-        setcookie("citycookie", "ASC", time() + (86400 * 30), "/");
+        setcookie("citycookie", "ASC", time() + (86400), "/");
     } else if (isset($_COOKIE["citycookie"])  && isset($_GET["citybutton"])) {
 
         $orderby = "City";
 
         if ($_COOKIE["citycookie"] == "ASC") {
-            setcookie("citycookie", "DESC", time() + (86400 * 30), "/");
+            setcookie("citycookie", "DESC", time() + (86400 ), "/");
             $orderASCDESC = "DESC";
         } else if ($_COOKIE["citycookie"] == "DESC") {
 
-            setcookie("citycookie", "ASC", time() + (86400 * 30), "/");
+            setcookie("citycookie", "ASC", time() + (86400), "/");
             $orderASCDESC = "ASC";
         }
     }
@@ -50,19 +50,19 @@ if (!isset($_SESSION["loginkey"])) {
 
         $orderby = "Rating";
         $orderASCDESC = "ASC";
-        setcookie("ratingcookie", "ASC", time() + (86400 * 30), "/");
+        setcookie("ratingcookie", "ASC", time() + (86400), "/");
     } else if (isset($_COOKIE["ratingcookie"])  && isset($_GET["ratingbutton"])) {
 
         $orderby = "Rating";
 
         if ($_COOKIE["ratingcookie"] == "ASC") {
 
-            setcookie("ratingcookie", "DESC", time() + (86400 * 30), "/");
+            setcookie("ratingcookie", "DESC", time() + (86400), "/");
 
             $orderASCDESC = "DESC";
         } else if ($_COOKIE["ratingcookie"] == "DESC") {
 
-            setcookie("ratingcookie", "ASC", time() + (86400 * 30), "/");
+            setcookie("ratingcookie", "ASC", time() + (86400), "/");
             $orderASCDESC = "ASC";
         }
     }
