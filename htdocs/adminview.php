@@ -17,10 +17,10 @@
         <form action="<?= $_SERVER["SCRIPT_NAME"] ?>" method="post">
 
             <div class="input">
-                <input type="text" title="username" name="username" placeholder="enter username" />
+                <input type="text" title="username" name="username" placeholder="enter username" value=<?php echo isset($_POST['username']) ? $_POST['username'] : ''; ?>/>
                 <br />
                 <br />
-                <input type="password" title="username" name="password" placeholder="enter password" />
+                <input type="password" title="username" name="password" placeholder="enter password" value=<?php echo isset($_POST['password']) ? $_POST['password'] : ''; ?>/>
                 <br />
                 <br />
                 <button type="submit" class="btn">Login</button>

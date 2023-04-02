@@ -4,8 +4,15 @@ const citySearchBox = document.querySelector('.cityList input[type="search"]');
 const countryDiv = document.querySelector('#countrydiv');
 const cityDiv = document.querySelector('.cityList');
 
-countrySearchBox.addEventListener('input', filterCountries);
-citySearchBox.addEventListener('input', filterCities);
+countrySearchBox.addEventListener('input', function() {
+  filterCountries();
+  citySearchBox.value = '';
+});
+
+citySearchBox.addEventListener('input', function() {
+  filterCities();
+  countrySearchBox.value = '';
+});
 
 function filterCountries() {
   const filter = countrySearchBox.value.toUpperCase();
@@ -34,4 +41,3 @@ function filterCities() {
     }
   });
 }
-
