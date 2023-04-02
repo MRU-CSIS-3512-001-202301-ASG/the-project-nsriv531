@@ -313,20 +313,6 @@ function rating_Change($db_helper, $changeInRating, $imageID)
     return $db_helper->run($query);
 }
 
-
-function temp_password_inserter()
-{
-
-    $variable = password_hash("password", PASSWORD_BCRYPT);
-
-    $passwordQuery = <<<QUERY
-
-    INSERT INTO administrators (password) VALUES ($variable)
-    WHERE username = 'admin'
-
-    QUERY;
-}
-
 function image_helper($imagepath)
 {
 

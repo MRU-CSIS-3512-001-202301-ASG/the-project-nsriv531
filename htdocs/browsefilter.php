@@ -95,8 +95,11 @@ if (!isset($_SESSION["loginkey"])) {
     }
 
     if (!empty($changeInRating) && !empty($imageID)) {
-
-        rating_Change($db_helper, $changeInRating, $imageID);
+        if (is_numeric($changeInRating) && $changeInRating >= 1 && $changeInRating <= 5) { //checks to see if the value is between 1 and 5.
+            rating_Change($db_helper, $changeInRating, $imageID);
+        } else {
+            echo "Value is not between 1 and 5.";
+        }
     }
 
     $queryResult = image_grabber($db_helper, $orderby, $orderASCDESC, $andWHERE, $andCondition);

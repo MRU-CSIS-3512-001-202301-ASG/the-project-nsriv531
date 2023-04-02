@@ -16,10 +16,11 @@ This video gave me clarificaiton of JSON objects and how to use them:
 
 https://youtu.be/nlYiOcMNzyQ
 
-I needed hlep in setting my cookies and trying to get them working, this vidoe helped a bit with that.
-
+I needed help in setting my cookies and trying to get them working, this video helped a bit with that.
 
 https://youtu.be/jort8_4U-88
 
 Of course our textbook came in handy! Esepcially during sessions and reworking their inhernet logic.
+
+https://www.pearson.com/en-us/subject-catalog/p/fundamentals-of-web-development/P200000003214?view=educator
 
