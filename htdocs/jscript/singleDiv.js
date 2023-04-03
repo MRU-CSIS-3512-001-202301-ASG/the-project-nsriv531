@@ -7,6 +7,6 @@ export class singleDiv {
     }
   
     show() {
-      this.singleDiv.style.display = "block";
+      this.singleDiv.style.display = "grid";
     }
   }

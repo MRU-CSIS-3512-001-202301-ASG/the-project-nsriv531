@@ -21,9 +21,9 @@ export function setImageSource(countryISO) {
             const existingImgElements = fillerDiv.querySelectorAll('img');
             const existingDivElements = fillerDiv.querySelectorAll('div');
             const existingPElements = fillerDiv.querySelectorAll('.noimages');
-            existingPElements.forEach(p => p.remove());          
             existingDivElements.forEach(div => div.remove());
             existingImgElements.forEach(img => img.remove());
+            existingPElements.forEach(p => p.remove());          
             imagePaths.forEach((imagepath, index) => { // iterate over both arrays simultaneously using index
                 const divForImage = document.createElement("div")
                 const pathPara = document.createElement("img");
@@ -63,11 +63,12 @@ export function setImageSource(countryISO) {
             });
         })
         .catch(error => {
+            // console.log("error");
             const fillerDiv = document.querySelector('.filler');
-            existingPElements.forEach(p => p.remove());
             const existingImgElements = fillerDiv.querySelectorAll('img');
             const existingDivElements = fillerDiv.querySelectorAll('div');
             const existingPElements = fillerDiv.querySelectorAll('.noimages');
+            existingPElements.forEach(p => p.remove());
             existingDivElements.forEach(div => div.remove());
             existingImgElements.forEach(img => img.remove());           
             const noimages = document.createElement("p");

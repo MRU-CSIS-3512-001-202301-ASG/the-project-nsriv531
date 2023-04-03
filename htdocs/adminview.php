@@ -11,7 +11,7 @@
 
     <div class="log-form">
         <form action="<?= $_SERVER["SCRIPT_NAME"] ?>" method="post">
-            <h1>COMP3512 - The Project</h1>
+            <h1>Web II (COMP 3512) - The Project</h1>
             <h2>Login Page</h2>
             <div class="input">
                 <input type="text" title="username" name="username" placeholder="enter username" value=<?php echo isset($_POST['username']) ? $_POST['username'] : ''; ?>>
