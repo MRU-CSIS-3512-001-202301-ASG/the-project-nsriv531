@@ -103,7 +103,12 @@ Today is going to be a long night..
 
 April 2nd 
 
-
 Oh shit, ttime to submit..
 
+April 3rd (after)
 
+This project has taught me a lot. And i want to keep going. Part of me still wants to check some of the boxes, but I guess its too late now. 
+
+It's all ogre now....
+
+Thanks JP. I hope I feel a thrill over a project like this again.
