@@ -18,8 +18,10 @@ export function setCityImageSource(cityName) {
             const singleDiv = document.querySelector('.single');
             const existingImgElements = fillerDiv.querySelectorAll('img');
             const existingDivElements = fillerDiv.querySelectorAll('div');
+            const existingPElements = fillerDiv.querySelectorAll('.noimages');
             existingDivElements.forEach(div => div.remove());
-            existingImgElements.forEach(img => img.remove());
+            existingImgElements.forEach(img => img.remove());   
+            existingPElements.forEach(p => p.remove());    
             imagePaths.forEach((imagepath, index) => { // iterate over both arrays simultaneously using index
                 const divForImage = document.createElement("div")
                 const pathPara = document.createElement("img");

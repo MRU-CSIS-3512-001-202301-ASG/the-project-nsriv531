@@ -63,7 +63,6 @@ export function setImageSource(countryISO) {
             });
         })
         .catch(error => {
-            // console.log("error");
             const fillerDiv = document.querySelector('.filler');
             const existingImgElements = fillerDiv.querySelectorAll('img');
             const existingDivElements = fillerDiv.querySelectorAll('div');
