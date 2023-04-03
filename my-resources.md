@@ -24,3 +24,9 @@ Of course our textbook came in handy! Esepcially during sessions and reworking t
 
 https://www.pearson.com/en-us/subject-catalog/p/fundamentals-of-web-development/P200000003214?view=educator
 
+
+Cool fonts that really helped this pop off and helped me visualize the overall feel of the website:
+
+https://fonts.googleapis.com/css2?family=Alata&display=swap
+
+
