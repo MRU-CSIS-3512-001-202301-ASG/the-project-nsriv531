@@ -40,12 +40,6 @@ h1, h2, h3 {
     flex-direction: column;
   }
 
-  /* .stickyheader{
-    position: fixed;
-    background-color: var(--secondary-color);
-    top:0;
-  } */
-
   .filler {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -65,6 +59,19 @@ h1, h2, h3 {
 
   }
 
+table{
+  border-collapse: collapse;
+  width: 100%;
+
+}
+th, td {
+  text-align: left;
+  padding: 8px;
+
+}
+tr:nth-child(odd),thead {
+  background-color: var(--bg-color);
+}
 
   input {
     width: 100%;
@@ -84,7 +91,7 @@ h1, h2, h3 {
   .cityList {
     overflow: auto;
     min-width: 300px;
-    height: 100vh;
+    height: 100%;
 
   }
 
@@ -96,8 +103,31 @@ h1, h2, h3 {
 
   .single {
     position: relative;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .single h1 {
+    
+    grid-column: -1/1;
 
   }
+
+  .single img{
+    margin: auto;
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .single table {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .single p{
+    text-align: left;
+   grid-column: -1/1;
+   grid-row: 3; 
+  }
+
   .cityList, .information, .single {
     min-height: 50px;
     background-color: var(--secondary-color);
@@ -122,7 +152,7 @@ button {
 }
 
 #countrydiv {
-    height: 100vh;
+    height: 100%;
     overflow: auto;
     text-align: center;
     min-width: 300px;
@@ -170,4 +200,79 @@ button:active {
 .clicked {
 
     font-style: italic;
+}
+
+.sidebarwrapper {
+
+  height: calc(100vh - 20px);
+  display: flex;
+  flex-direction: row;
+   gap:10px;
+}
+
+
+@media (max-width: 1700px) {
+
+  .filler {
+    grid-template-columns: 1fr 1fr;
+} 
+}
+
+@media (max-width: 1200px) {
+
+  #countrydiv, .cityList {
+
+    height: calc(50% - 5px);
+    overflow:auto;
+  }
+
+  .sidebarwrapper {
+    width:300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  
+  }
+
+  .filler {
+    grid-template-columns: 1fr;
+} 
+}
+
+@media (max-width: 700px) {
+
+  #countrydiv, .cityList {
+
+    height: calc(50% - 5px);
+    overflow:auto;
+
+  }
+
+  #countrydiv h2, .cityList h2{
+    margin-top: 0;
+  }
+  
+
+  .sidebarwrapper {
+    height:30vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  
+  }
+
+  body{
+
+    flex-direction: column;
+
+  }
+  #wrapper{
+    width: 100%;
+
+  }
+
+  .filler {
+    grid-template-columns: 1fr;
+} 
 }

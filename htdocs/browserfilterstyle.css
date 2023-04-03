@@ -1,109 +1,75 @@
-button:hover {
+:root {
+    --primary-color: #319795;
+    --primary-color-dark: #2d7f7f;
+    --secondary-color: #2d3748;
+    --bg-color: #1a202c;
+    --error-color: #ec2701;
+    --white: #fff;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+  }
+  *{
+    font-family: sans-serif;
+    color:white;
+  }
 
-    background-color: rgb(227, 227, 63);
-    color: white;
-
+body{
+    background-color: var(--bg-color);
 }
 
-button:active {
 
-    background-color: rgba(252, 109, 0, 0.986);
-    color: rgba(14, 11, 11, 0.885);
+input {
 
-}
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid var(--primary-color-dark);
+    background-color: var(--bg-color);
+    border-radius: 5px;
+    outline: none;
+    font-size: 1.2rem;
+    font-family: monospace;
+    transition: 0.3s;
+    color: var(--white);
+  }
+  
+  input::placeholder {
+    color: var(--white);
+  }
+  
+  input:focus,
+  input:hover {
+    border-color: var(--primary-color);
+  }
 
-.ascdesc {
-    background-color: #6a552f;
-    color: rgb(47, 9, 9);
-    padding: 20px 20px;
-    border: 2px solid #4CAF50;
-    margin: 25px 0;
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-size: 1rem;
     cursor: pointer;
-    height: 60px;
-    width: 35%;
+    transition: 0.3s;
+  }
+  
+  button:hover {
+    background-color: var(--primary-color-dark);
+  }
 
-}
-
-
-.changerating{
-    background-color: #6a552f;
-    color: rgb(47, 9, 9);
-    padding: 20px 20px;
-    border: 2px solid #4CAF50;
-    margin: 10px 0;
-    cursor: pointer;
-    height: 60px;
-    width: 10%;
-    float:right;
-
-}
-
-.btnsearch {
-    background-color: #6a552f;
-    color: rgb(47, 9, 9);
-    padding: 20px 20px;
-    border: 2px solid #4CAF50;
-    margin: 10px 0;
-    cursor: pointer;
-    height: 60px;
-    width: 30%;
-    float:right;
-
-}
-
-.logout {
-    background-color: #6a552f;
-    color: rgb(47, 9, 9);
-    padding: 20px 20px;
-    border: 2px solid #4CAF50;
-    margin: 10px 0;
-    cursor: pointer;
-    height: 60px;
-    width: 4%;
-    float:right;
-
-}
-
-
-.btn:hover {
-
-    background-color: rgb(227, 227, 63);
-    color: white;
-
-}
-
-.btn:active {
-
-    background-color: rgba(252, 109, 0, 0.986);
-    color: rgba(14, 11, 11, 0.885);
-
-}
-
-table {
-    border: 20px solid rgb(145, 107, 20);
-    margin: 25px 0;
-    font-size: 20px;
-    min-width: 100%;
-    overflow: hidden;
-    border-radius: 5px 5px 0 0;
-
-}
-
-td {
-    margin: 0px;
-    padding: 5px;
-    text-align: center;
-    border: 10px solid #133436;
-}
-
-
-tr {
-    margin: 0px;
-    padding: 5px;
-    text-align: center;
-    border: 20px solid #2ba2a8;
-}
-
+table{
+    border-collapse: collapse;
+    width: 100%;
+  
+  }
+  th, td {
+    text-align: left;
+    padding: 8px;
+  
+  }
+  tr:nth-child(odd),thead {
+    background-color: var(--secondary-color);
+  }
+  
 img {
 
     width: 150px;
