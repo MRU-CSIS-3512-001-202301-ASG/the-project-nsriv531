@@ -1,0 +1,278 @@
+@import url("https://fonts.googleapis.com/css2?family=Alata&display=swap");
+
+:root {
+  --primary-color: #319795;
+  --primary-color-dark: #2d7f7f;
+  --secondary-color: #2d3748;
+  --bg-color: #1a202c;
+  --error-color: #ec2701;
+  --white: #fff;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+*{
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  display:flex;
+  flex-direction: row;
+  gap:10px;
+  color: var(--white);
+  
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+h1, h2, h3 {
+
+  font-family: "Alata",sans-serif;
+
+}
+  #wrapper{
+    font-family: sans-serif;
+    gap:10px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .filler {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    min-height: 50px;
+    /*border: 5px outset red;*/
+    /* background-color: lightblue; */
+    text-align: center;
+    background-color: var(--secondary-color);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 var(--shadow-color);
+    
+  }
+
+  .filler h1 {
+    grid-column: -1/1;
+
+  }
+
+table{
+  border-collapse: collapse;
+  width: 100%;
+
+}
+th, td {
+  text-align: left;
+  padding: 8px;
+
+}
+tr:nth-child(odd),thead {
+  background-color: var(--bg-color);
+}
+
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid var(--bg-color);
+    background-color: var(--bg-color);
+    border-radius: 5px;
+    outline: none;
+    font-size: 1.2rem;
+    font-family: monospace;
+    transition: 0.3s;
+    color: var(--white);
+  }
+
+
+  .cityList {
+    overflow: auto;
+    min-width: 300px;
+    height: 100%;
+
+  }
+
+
+  .information {
+    text-align: left;
+
+  }
+
+  .single {
+    position: relative;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .single h1 {
+    
+    grid-column: -1/1;
+
+  }
+
+  .single img{
+    margin: auto;
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .single table {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .single p{
+    text-align: left;
+   grid-column: -1/1;
+   grid-row: 3; 
+  }
+
+  .cityList, .information, .single {
+    min-height: 50px;
+    background-color: var(--secondary-color);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 var(--shadow-color);
+    text-align: center;
+  }
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top:0;
+    left:8px;
+    width: 200px;
+    border-radius: 4px;
+}
+
+#countrydiv {
+    height: 100%;
+    overflow: auto;
+    text-align: center;
+    min-width: 300px;
+    background-color: var(--secondary-color);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 var(--shadow-color);
+
+}
+
+#countrydiv p, .cityList p {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--white);
+  background-color: var(--primary-color);
+  font-family: sans-serif;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#countrydiv p:hover, .cityList p:hover {
+  
+  background-color: var(--primary-color-dark);
+  cursor: pointer;
+  
+}
+
+button:hover {
+
+    background-color: rgb(227, 227, 63);
+    color: white;
+
+}
+
+button:active {
+
+    background-color: rgba(252, 109, 0, 0.986);
+    color: rgba(14, 11, 11, 0.885);
+
+}
+
+.clicked {
+
+    font-style: italic;
+}
+
+.sidebarwrapper {
+
+  height: calc(100vh - 20px);
+  display: flex;
+  flex-direction: row;
+   gap:10px;
+}
+
+
+@media (max-width: 1700px) {
+
+  .filler {
+    grid-template-columns: 1fr 1fr;
+} 
+}
+
+@media (max-width: 1200px) {
+
+  #countrydiv, .cityList {
+
+    height: calc(50% - 5px);
+    overflow:auto;
+  }
+
+  .sidebarwrapper {
+    width:300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  
+  }
+
+  .filler {
+    grid-template-columns: 1fr;
+} 
+}
+
+@media (max-width: 700px) {
+
+  #countrydiv, .cityList {
+
+    height: calc(50% - 5px);
+    overflow:auto;
+
+  }
+
+  #countrydiv h2, .cityList h2{
+    margin-top: 0;
+  }
+  
+
+  .sidebarwrapper {
+    height:30vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  
+  }
+
+  body{
+
+    flex-direction: column;
+
+  }
+  #wrapper{
+    width: 100%;
+
+  }
+
+  .filler {
+    grid-template-columns: 1fr;
+} 
+}
